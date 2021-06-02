@@ -1,0 +1,544 @@
+<html>
+
+<head>
+    <style>
+        .gm-control-active>img {
+            box-sizing: content-box;
+            display: none;
+            left: 50%;
+            pointer-events: none;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .gm-control-active>img:nth-child(1) {
+            display: block;
+        }
+        
+        .gm-control-active:hover>img:nth-child(1),
+        .gm-control-active:active>img:nth-child(1) {
+            display: none;
+        }
+        
+        .gm-control-active:hover>img:nth-child(2),
+        .gm-control-active:active>img:nth-child(3) {
+            display: block;
+        }
+    </style>
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans:400,500,700|Google+Sans+Text:400" />
+    <style>
+        .gm-ui-hover-effect {
+            opacity: 0.6;
+        }
+        
+        .gm-ui-hover-effect:hover {
+            opacity: 1;
+        }
+    </style>
+    <style>
+        .gm-style .gm-style-cc a,
+        .gm-style .gm-style-cc button,
+        .gm-style .gm-style-cc span,
+        .gm-style .gm-style-mtc div {
+            font-size: 10px;
+            box-sizing: border-box;
+        }
+    </style>
+    <style>
+        @media print {
+            .gm-style .gmnoprint,
+            .gmnoprint {
+                display: none;
+            }
+        }
+        
+        @media screen {
+            .gm-style .gmnoscreen,
+            .gmnoscreen {
+                display: none;
+            }
+        }
+    </style>
+    <style>
+        .dismissButton {
+            background-color: #fff;
+            border: 1px solid #dadce0;
+            color: #1a73e8;
+            border-radius: 4px;
+            font-family: Roboto, sans-serif;
+            font-size: 14px;
+            height: 36px;
+            cursor: pointer;
+            padding: 0 24px;
+        }
+        
+        .dismissButton:hover {
+            background-color: rgba(66, 133, 244, 0.04);
+            border: 1px solid #d2e3fc;
+        }
+        
+        .dismissButton:focus {
+            background-color: rgba(66, 133, 244, 0.12);
+            border: 1px solid #d2e3fc;
+            outline: 0;
+        }
+        
+        .dismissButton:hover:focus {
+            background-color: rgba(66, 133, 244, 0.16);
+            border: 1px solid #d2e2fd;
+        }
+        
+        .dismissButton:active {
+            background-color: rgba(66, 133, 244, 0.16);
+            border: 1px solid #d2e2fd;
+            box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+        }
+        
+        .dismissButton:disabled {
+            background-color: #fff;
+            border: 1px solid #f1f3f4;
+            color: #3c4043;
+        }
+    </style>
+    <style>
+        .gm-style-pbc {
+            transition: opacity ease-in-out;
+            background-color: rgba(0, 0, 0, 0.45);
+            text-align: center;
+        }
+        
+        .gm-style-pbt {
+            font-size: 22px;
+            color: white;
+            font-family: Roboto, Arial, sans-serif;
+            position: relative;
+            margin: 0;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+    </style>
+    <style>
+        .gm-style img {
+            max-width: none;
+        }
+        
+        .gm-style {
+            font: 400 11px Roboto, Arial, sans-serif;
+            text-decoration: none;
+        }
+    </style>
+    <base target="_parent" />
+    <link rel="stylesheet" href="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.2/css/mdb.min.css" />
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        #intro {
+            background-size : cover;
+            background-position: center center;
+            background-image: url('img/b.jpg');
+            /* background-attachment: fixed; */
+        }
+        .card-body {
+            padding-bottom: 0px;
+        }
+        .pad_0 {
+            padding: 0;
+        }
+        .pad_5 {
+            padding: 5% 5% 5% 5%;
+        }
+        .pad_15 {
+            padding: 5% 15% ;
+        }
+        .pad_60 {
+            padding: 60px 60px 60px 60px;
+        }
+        .top-nav-collapse {
+            background-color: #24355c;
+        }
+        
+        @media (max-width: 768px) {
+            .navbar:not(.top-nav-collapse) {
+                background-color: #24355c;
+            }
+        }
+        
+        @media (min-width: 800px) and (max-width: 850px) {
+            .navbar:not(.top-nav-collapse) {
+                background-color: #24355c;
+            }
+        }
+    </style>
+    <style type="text/css">
+        /* Chart.js */
+        
+        @-webkit-keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .chartjs-render-monitor {
+            -webkit-animation: chartjs-render-animation 0.001s;
+            animation: chartjs-render-animation 0.001s;
+        }
+    </style>
+</head>
+
+<body>
+    <!--Main Navigation-->
+    <header>
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+            <div class="container">
+                <!-- Navbar brand -->
+                <!-- <div class="navbar-brand" href="#">Energy-based Models</div> -->
+
+                <!-- Collapse button -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Collapsible content -->
+                <div class="collapse navbar-collapse" id="basicExampleNav">
+                    <!-- Links -->
+                    <ul class="navbar-nav mr-auto smooth-scroll">
+                        <li class="nav-item">
+                            <a
+                            class="nav-link waves-effect waves-light"
+                            href="#Overview" 
+                            data-offset=80
+                            >Overview</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link waves-effect waves-light" href="#Speakers" data-offset=80
+                            >Speakers</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link waves-effect waves-light" href="#Topics" data-offset=80
+                            >Topics</a
+                            >
+                        </li>
+                    </ul>
+                    <!-- <ul class="navbar-nav", style="padding-right:40px">
+                        <li class="nav-item">
+                            <a class="nav-link waves-effect waves-light " href="http://v.yfxu.me/ebm/paper.html">Papers</a>
+                        </li>
+                    </ul> -->
+            <!-- Links -->
+
+                    <!-- Right elements -->
+                    <!-- Right elements -->
+
+                </div>
+            <!-- Collapsible content -->
+            </div>
+        </nav>
+        <!--/.Navbar-->
+
+        <!--Mask-->
+        <div id="intro" class="view">
+            <div class="rgba-black-light", style="padding-top: 100px; padding-bottom:100px">
+                <div class="container-lg align-items-center justify-content-center">
+                    <div class="row justify-content-center text-center">
+                        <div class="col-md-10">
+                            <!-- Heading -->
+                            <!-- <div class="row">
+                                <div class="col-md-3">
+                                    <img src="http://www.stat.ucla.edu/~ywu/church.png" alt="..." class="card-img-top rounded" />
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="img/unit.jpg" alt="..." class="card-img-top rounded" />
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="img/transition.png" alt="..." class="card-img-top" />
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="http://www.stat.ucla.edu/~ywu/lsun.png" alt="..." class="card-img-top" />
+                                </div>
+                            </div> -->
+                            <h2 class="display-4 font-weight-bold white-text pt-5 mb-2">
+                                Theory and Application of Energy-Based Generative Models
+                            </h2>
+
+                            <!-- Divider -->
+                            <hr class="hr-light" />
+
+                            <!-- Description -->
+                            <h4 class="white-text my-3">
+                                ICCV 2021 Tutorial
+                            </h4>
+                            <h5 class="white-text my-3">
+                                11:00 AM - 02:30 PM (PDT, UTC-7) June 19th, 2021
+                            </h5>
+                            <h5 class="white-text my-3">Virtual Event Online</h5>
+                            <button type="button" class="btn btn-outline-light btn-rounded">Zoom Link</button>
+                            
+                            <!-- <div class="row">
+                                <div class="col-md-3">
+                                    <img src="http://www.stat.ucla.edu/~ywu/LSUN.png" alt="..." class="card-img-top" />
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="http://www.stat.ucla.edu/~ywu/chains.gif" alt="..." class="card-img-top" />
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="img/3D_syn.png" alt="..." class="card-img-top" />
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="img/xing.png" alt="..." class="card-img-top" />
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/.Mask-->
+    </header>
+    <!--Main Navigation-->
+
+    <!--Main layout-->
+    <main class="mt-5">
+        <div class="container">
+            <section id="Overview">
+                <h2 class="mb-5 font-weight-bold">Overview</h2>
+                <div class="row d-flex justify-content-center mb-4">
+                    <!--Grid column-->
+                    <div class="col-md-8">
+                        <!-- Description -->
+                        <p class="text-justify">
+                            In recent years, there has been growing interest in ConvNet-parametrized energy-based generative models. The concomitant need for representation, generation, efficiency and scalability in generative models is addressed by the framework of ConvNet-parametrized EBMs. Specifically, different from existing popular generative models, such as Generative Adversarial Nets (GANs) and Variational Auto-encoders (VAEs), the energy-based generative model can unify the bottom-up representation and top-down generation into a single framework, and can be trained by "analysis by synthesis", without recruiting an extra auxiliary model. Both model parameter update and data synthesis can be efficiently computed by back-propagation. The model can be easily designed and scaled up. The expressive power and advantages of this framework has launched a series of research works leading to significant theoretical and algorithmic maturity. Due to its major advantages over conventional models, energy-based generative models are now utilized in many computer vision tasks. The tutorial will provide a comprehensive introduction to energy-based generative modeling and learning in computer vision. An intuitive and systematic understanding of the underlying learning objective and sampling strategy will be developed. Different types of computer vision tasks successfully solved by the energy-based generative frameworks will be presented. Besides introducing the energy-based framework and the state-of-the-art applications, this tutorial will aim to enable researchers to apply the energy-based learning principles in other contexts of computer vision.
+                        </p>
+                    </div>
+                    <!--Grid column-->
+                </div>
+                <!--Grid row-->
+
+            </section>
+            <!--Section: Best Features-->
+
+            <hr class="my-2" />
+
+            <!--Section: Examples-->
+            <section id="Speakers">
+                <h2 class="mb-5 font-weight-bold" , style="margin-top:40px">Speakers</h2>
+
+                <!--Grid row-->
+                <div class="container">
+                    <div class="row text-center", style="padding-left:5%;padding-right:5%">
+                        <!--Grid column-->
+                        <div class="col-md-4 col-sm-6 offset-md-1">
+                            <div class="view overlay pad_15">
+                                <a href="http://www.stat.ucla.edu/~jxie/"><img src="img/jianwen.jpg" class="card-img-top rounded-circle" alt="" /></a>
+                                <div class="mask rgba-white-slight"></div>
+                            </div>
+    
+                            <h4 class="font-weight-bold", style="margin-top:10px;margin-bottom:10px"><a href="http://www.stat.ucla.edu/~jxie/">Jianwen Xie</a></h4>
+                            <p class="text-justify text-center">
+                                Baidu Research, USA</p>
+                        </div>
+                        <div class="col-md-4 col-sm-6 offset-md-2">
+                            <div class="view overlay pad_15">
+                                <a href="http://www.stat.ucla.edu/~ywu/"><img src="img/ynwu.jpg" class="card-img-top rounded-circle" alt="" /></a>
+                                <div class="mask rgba-white-slight"></div>
+                            </div>
+    
+                            <h4 class="font-weight-bold", style="margin-top:10px;margin-bottom:10px">  
+                            <a href="http://www.stat.ucla.edu/~ywu/">Ying Nian Wu</a></h4>
+                                <p class="text-justify text-center">
+                                    University of California, Los Angeles
+                                </p>
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
+            <!--Section: Examples-->
+            <hr class="my-2" />
+
+
+            <section id="Topics">
+
+                <!-- Heading -->
+                <h2 class="mb-5 font-weight-bold" , style="margin-top:40px">Topics</h2>
+
+                <div class=" mb-3">
+                    <div class="row justify-content-center">
+                        <div class="col-sm-12">
+                            <div class="card-header">
+                                <h5 class="font-weight-bold my-0">Part I : Fundamentals</h5>
+                                <!-- <h6>11:00 AM - 12:00 PM --- Speaker: Jianwen Xie</h6> -->
+                            </div>
+                            <div class="card-body">
+                                <!-- <h6 class="font-weight-bold">1. Energy-Based Model Fundatmentals</h6> -->
+                                <ul>
+                                    <li>
+                                        Three families of probabilistic models: Descriptor, Generator, and Discriminator                               </li>
+                                    <li>
+                                        Filters, Random Fields and Maximum Entropy (FRAME) models</li>
+                                    <li>Sparse and Deep Generaization of FRAME models</li>
+                                    <li>Generative ConvNets: The first deep EBM parameterized by modern neural network  </li>
+                                    <li>Equivalence between EBM and discriminative models </li>
+                                    <li>Maximum likelihood estimation and &quot;analysis by synthesis&quot; </li>
+                                    <li>Gradient-based MCMC and Langevin Dynamics</li>
+                                    <li>Self-adversarial interpretation of energy-based learning</li>
+                                    <li>Contrastive divergence </li>
+                                    <li>Short-Run MCMC for EBM</li>
+                                </ul>
+                            </div>
+                            <!-- <hr class="my-2" />
+                            <div class="card-body">
+                                <h6>2. </h6>
+                                <ul>
+                                    <li>
+                                        I am a senior research scientist in Cognitive Computing Lab, Baidu Research, USA, led by Dr. Ping Li. Before joining Baidu
+                                    </li>
+                                    <li>
+                                        I am a senior research scientist in Cognitive Computing Lab, Baidu Research, USA, led by Dr. Ping Li. Before joining Baidu
+                                    </li>
+                                    <li>
+                                        I am a senior research scientist in Cognitive Computing Lab, Baidu Research, USA, led by Dr. Ping Li. Before joining Baidu
+                                    </li>
+                                </ul>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="my-2">
+                <div class="">
+                    <div class="row justify-content-center">
+                        <div class="col-sm-12">
+                            <div class="card-header">
+                                <h5 class="font-weight-bold my-0">Part II : Methodologies</h5>
+                                <!-- <h6>12:30 PM - 14:00 PM --- Speaker: Ying Nian Wu</h6> -->
+                            </div>
+                            <div class="card-body">
+                                <h6 class="font-weight-bold">1. Energy-Based Generative Frameworks</h6>
+                                <ul>
+                                    <li>
+                                    Energy-based generative neural network</li>
+                                    <li>Generative Cooperative Networks and Cooperative learning </li>
+                                    <li>
+                                        Divergence triangle</li>
+                                    <li>
+                                        EBM in latent space of generator model                                    </li>
+                                    <li>
+                                        Joint training of EBM with flow-based model                                    </li>
+                                </ul>
+                                <h6 class="font-weight-bold">2: Strategy for Efficient Learning and Sampling</h6>
+                                <ul>
+                                    <li>Multi-grid learning and sampling for EBMs </li>
+                                    <li>Multi-stage corse-to-fine expanding and sampling for EBMs </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="my-2">
+                <div class="">
+                    <div class="row justify-content-center">
+                        <div class="col-sm-12">
+                            <div class="card-header">
+                                <h5 class="font-weight-bold my-0">Part III : Applications</h5>
+                                <!-- <h6>12:30 PM - 14:00 PM --- Speaker: Ying Nian Wu</h6> -->
+                            </div>
+                            <div class="card-body">
+                                <h6 class="font-weight-bold">1: Energy-Based Generative Neural Networks </h6>
+                                <ul>
+                                    <li>
+                                        Generative PointNet: EBMs for unordered point clouds                                    </li>
+                                    <li>
+                                        Generative VoxelNet: EBMs for 3D volumetric shapes                                    </li>
+                                    <li>
+                                        Generative Spatial-Temporal ConvNet: EBMs for videos                                    </li>
+                                    <li>EBMs for inverse optimal control and trajectory prediction </li>
+                                    <li>Patchwise  Generative ConvNet: EBMs for internal learning                                    </li>
+                                </ul>
+                                <h6 class="font-weight-bold">2: Energy-Based Generative Cooperative Networks</h6>
+                                <ul>
+                                    <li>Visual data synthesis </li>
+                                    <li>
+                                    Cooperative network for Conditional learning (supervised image-to-image generation)</li>
+                                    <li>Unsupervised image-to-image translation</li>
+                                    <li>Generative cooperative saliency prediction </li>
+                                </ul>
+                                <h6 class="font-weight-bold">3: Latent Space Energy-Based Model</h6>
+                                <ul>
+                                    <li>Trajectory prediction with latent belief energy-based model</li>
+                                    <li>Learning latent space energy-based prior model for molecule generation</li>
+                                    <li>Semi-supervised learning by latent space energy-based model of symbol-vector coupling</li>
+                                </ul>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="my-5" />
+
+            </div>
+    </main>
+    <!--Main layout-->
+
+    <!-- Footer -->
+    <footer class="page-footer font-small unique-color-dark">
+
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">
+                Web designer: <a href="https://yfxu.me">Yifei Xu</a>; 2018 Copyright:
+                <a href="https://mdbootstrap.com/bootstrap-tutorial/">
+          MDBootstrap.com</a
+        >
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+    <script
+      type="text/javascript"
+      src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.2/js/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.2/js/popper.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.2/js/bootstrap.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.2/js/mdb.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/js/bundles/4.19.2/compiled-addons.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/js/plugins/mdb-plugins-gathered.min.js"
+    ></script>
+    <div class="hiddendiv common"></div>
+  </body>
+</html>
