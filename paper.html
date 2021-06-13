@@ -1,0 +1,937 @@
+<html>
+
+<head>
+    <style>
+        .gm-control-active>img {
+            box-sizing: content-box;
+            display: none;
+            left: 50%;
+            pointer-events: none;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .gm-control-active>img:nth-child(1) {
+            display: block;
+        }
+        
+        .gm-control-active:hover>img:nth-child(1),
+        .gm-control-active:active>img:nth-child(1) {
+            display: none;
+        }
+        
+        .gm-control-active:hover>img:nth-child(2),
+        .gm-control-active:active>img:nth-child(3) {
+            display: block;
+        }
+    </style>
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans:400,500,700|Google+Sans+Text:400" />
+    <style>
+        .gm-ui-hover-effect {
+            opacity: 0.6;
+        }
+        
+        .gm-ui-hover-effect:hover {
+            opacity: 1;
+        }
+    </style>
+    <style>
+        .gm-style .gm-style-cc a,
+        .gm-style .gm-style-cc button,
+        .gm-style .gm-style-cc span,
+        .gm-style .gm-style-mtc div {
+            font-size: 10px;
+            box-sizing: border-box;
+        }
+    </style>
+    <style>
+        @media print {
+            .gm-style .gmnoprint,
+            .gmnoprint {
+                display: none;
+            }
+        }
+        
+        @media screen {
+            .gm-style .gmnoscreen,
+            .gmnoscreen {
+                display: none;
+            }
+        }
+    </style>
+    <style>
+        .dismissButton {
+            background-color: #fff;
+            border: 1px solid #dadce0;
+            color: #1a73e8;
+            border-radius: 4px;
+            font-family: Roboto, sans-serif;
+            font-size: 14px;
+            height: 36px;
+            cursor: pointer;
+            padding: 0 24px;
+        }
+        
+        .dismissButton:hover {
+            background-color: rgba(66, 133, 244, 0.04);
+            border: 1px solid #d2e3fc;
+        }
+        
+        .dismissButton:focus {
+            background-color: rgba(66, 133, 244, 0.12);
+            border: 1px solid #d2e3fc;
+            outline: 0;
+        }
+        
+        .dismissButton:hover:focus {
+            background-color: rgba(66, 133, 244, 0.16);
+            border: 1px solid #d2e2fd;
+        }
+        
+        .dismissButton:active {
+            background-color: rgba(66, 133, 244, 0.16);
+            border: 1px solid #d2e2fd;
+            box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+        }
+        
+        .dismissButton:disabled {
+            background-color: #fff;
+            border: 1px solid #f1f3f4;
+            color: #3c4043;
+        }
+    </style>
+    <style>
+        .gm-style-pbc {
+            transition: opacity ease-in-out;
+            background-color: rgba(0, 0, 0, 0.45);
+            text-align: center;
+        }
+        
+        .gm-style-pbt {
+            font-size: 22px;
+            color: white;
+            font-family: Roboto, Arial, sans-serif;
+            position: relative;
+            margin: 0;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+    </style>
+    <style>
+        .gm-style img {
+            max-width: none;
+        }
+        
+        .gm-style {
+            font: 400 11px Roboto, Arial, sans-serif;
+            text-decoration: none;
+        }
+    </style>
+    <base target="_parent" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.0/css/all.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" />
+    <link rel="stylesheet" href="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.2/css/mdb.min.css" />
+    <!-- <link rel="stylesheet" href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/compiled-addons-4.19.2.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/mdb-plugins-gathered.min.css" /> -->
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        #intro {
+            background-size : cover;
+            background-position: center center;
+            background-image: url('img/b.jpg');
+            /* background-attachment: fixed; */
+        }
+        
+        .pad_60{
+            padding: 60px 60px 60px 60px;
+        }
+        .top-nav-collapse {
+            background-color: #24355c;
+        }
+        .card-header, .card-footer {
+            background-color: #ffffff;
+        }
+        
+        @media (max-width: 768px) {
+            .navbar:not(.top-nav-collapse) {
+                background-color: #24355c;
+            }
+        }
+        
+        @media (min-width: 800px) and (max-width: 850px) {
+            .navbar:not(.top-nav-collapse) {
+                background-color: #24355c;
+            }
+        }
+    </style>
+    <style type="text/css">
+        /* Chart.js */
+        
+        @-webkit-keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .chartjs-render-monitor {
+            -webkit-animation: chartjs-render-animation 0.001s;
+            animation: chartjs-render-animation 0.001s;
+        }
+    </style>
+</head>
+
+<body>
+    <!--Main Navigation-->
+    <header>
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+            <div class="container">
+                <!-- Navbar brand -->
+                <div class="navbar-brand" href="#">Energy-Based Models</div>
+
+                <!-- Collapse button -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Collapsible content -->
+                <div class="collapse navbar-collapse" id="basicExampleNav">
+                    <!-- Links -->
+                    <ul class="navbar-nav mr-auto smooth-scroll">
+                        
+              <li class="nav-item">
+                <a
+                  class="nav-link waves-effect waves-light"
+                  href="#Overview"
+                  >Overview</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link waves-effect waves-light" href="#Speakers"
+                  >Speakers</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link waves-effect waves-light" href="#Schedule"
+                  >Topics</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link waves-effect waves-light" href="#Papers"
+                  >Papers</a
+                >
+              </li>
+            </ul>
+            <!-- Links -->
+
+    <!-- Right elements -->
+    <div class="d-flex align-items-center">
+        <img
+        src="img/cvpr.png"
+        height="35"
+        alt=""
+        loading="lazy"
+        />
+    </div>
+    <!-- Right elements -->
+
+            </div>
+            <!-- Collapsible content -->
+            </div>
+        </nav>
+        <!--/.Navbar-->
+
+        <!--Mask-->
+        <div id="intro" class="view">
+            <div class="rgba-black-strong", style="padding-top: 100px; padding-bottom:100px">
+                <div class="container-lg align-items-center justify-content-center">
+                    <div class="row justify-content-center text-center">
+                        <div class="col-md-10">
+                            <!-- Heading -->
+                            <!-- <div class="row">
+                                <div class="col-lg-3 col-md-4">
+                                    <img src="http://www.stat.ucla.edu/~ywu/church.png" alt="..." class="card-img-top rounded" />
+                                </di col-md-8lg
+                                <div class="col-lg-3 col-md-4">
+                                    <img src="img/unit.jpg" alt="..." class="card-img-top rounded" />
+                                </div>
+                                <div class="col-lg-3 col-md col-md-8-4">
+                                    <img src="img/transition.png" alt="..." class="card-img-top" />
+                                </div>
+                                <div class="col-lg-3 col-md col-md-8-4">
+                                    <img src="http://www.stat.ucla.edu/~ywu/lsun.png" alt="..." class="card-img-top" />
+                                </di col-md-8lg
+                            </div> -->
+                            <h2 class="display-4 font-weight-bold white-text pt-5 mb-2">
+                                The field of Energy-Based Models
+                            </h2>
+
+                            <!-- Divider -->
+                            <hr class="hr-light" />
+
+                            <!-- Description -->
+                            <h4 class="white-text my-4">
+                                
+                            </h4>
+                            <!-- <div class="row">
+                                <div class="col-lg-3 col-md-4">
+                                    <img src="http://www.stat.ucla.edu/~ywu/LSUN.png" alt="..." class="card-img-top" />
+                                </di col-md-8lg
+                                <div class="col-lg-3 col-md-4">
+                                    <img src="http://www.stat.ucla.edu/~ywu/chains.gif" alt="..." class="card-img-top" />
+                                </di col-md-8lg
+                                <div class="col-lg-3 col-md-4">
+                                    <img src="img/3D_syn.png" alt="..." class="card-img-top" />
+                                </div>
+                                <div class="col-lg-3 col-md col-md-8-4">
+                                    <img src="img/xing.png" alt="..." class="card-img-top" />
+                                </div>
+                            </div> - col-md-8lg
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/.Mask-->
+    </header>
+    <!--Main Navigation-->
+
+    <!--Main layout-->
+    <main class="mt-5">
+        <div class="container">
+
+            <section id="method">
+
+                <!-- Heading -->
+                <h2 class="mb-5 font-weight-bold">Energy-Based Generative ConvNet</h2>
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>1.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center">
+                        <img class="img-fluid" src="img/3D_syn_sm.png" alt="">
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>A Theory of Generative ConvNet</b></p>
+                        <p class="my-0">Jianwen Xie *, Yang Lu *, Song-Chun Zhu, and Ying Nian Wu</p>
+                        <p>International Conference on Machine Learning (ICML) 2016. (* equal contributions)</p>
+                        <button type="button" class="btn-sm btn-primary">Paper</button>
+                        <button type="button" class="btn-sm btn-primary">Posters</button>
+                        <button type="button" class="btn-sm btn-primary">Codes</button>
+                        <button type="button" class="btn-sm btn-primary">Project pages</button>
+                    </div>
+                </div>
+                <hr class="my-3" />
+                
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>2.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center">
+                        <img class="img-fluid" src="img/3D_syn_sm.png" alt="">
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Synthesizing Dynamic Pattern by Spatial-Temporal Generative ConvNet</b></p>
+                        <p class="my-0">Jianwen Xie, Song-Chun Zhu, and Ying Nian Wu</p>
+                        <p>International Conference on Computer Vision and Pattern Recognition (CVPR) 2017</p>
+                        <button type="button" class="btn-sm btn-primary">Paper</button>
+                        <button type="button" class="btn-sm btn-primary">Posters</button>
+                        <button type="button" class="btn-sm btn-primary">Codes</button>
+                        <button type="button" class="btn-sm btn-primary">Project pages</button>
+                    </div>
+                </div>
+                <hr class="my-3" />
+                
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>3.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center">
+                        <img class="img-fluid" src="img/3D_syn_sm.png" alt="">
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Learning Descriptor Networks for 3D Shape Synthesis and Analysis</b></p>
+                        <p class="my-0">Jianwen Xie *, Zilong Zheng *, Ruiqi Gao, Wenguan Wang, Song-Chun Zhu, Ying Nian Wu</p>
+                        <p>IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2018</p>
+                        <button type="button" class="btn-sm btn-primary">Paper</button>
+                        <button type="button" class="btn-sm btn-primary">Posters</button>
+                        <button type="button" class="btn-sm btn-primary">Codes</button>
+                        <button type="button" class="btn-sm btn-primary">Project pages</button>
+                    </div>
+                </div>
+                
+                
+                <hr class="my-3" />
+                
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>4.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center">
+                        <img class="img-fluid" src="img/3D_syn_sm.png" alt="">
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Learning Energy-Based Models as Generative ConvNets via Multi-grid Modeling and Sampling</b></p>
+                        <p class="my-0">Ruiqi Gao*, Yang Lu*, Junpei Zhou, Song-Chun Zhu, Ying Nian Wu  (* equal contributions)</p>
+                        <p>IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2018</p>
+                        <button type="button" class="btn-sm btn-primary">Paper</button>
+                        <button type="button" class="btn-sm btn-primary">Posters</button>
+                        <button type="button" class="btn-sm btn-primary">Codes</button>
+                        <button type="button" class="btn-sm btn-primary">Project pages</button>
+                    </div>
+                </div>
+                <hr class="my-3" />
+                
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>5.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center">
+                        <img class="img-fluid" src="img/3D_syn_sm.png" alt="">
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Learning Energy-based Spatial-Temporal Generative ConvNet for Dynamic Patterns</b></p>
+                        <p class="my-0">Jianwen Xie, Song-Chun Zhu, and Ying Nian Wu</p>
+                        <p>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI) 2019</p>
+                        <button type="button" class="btn-sm btn-primary">Paper</button>
+                        <button type="button" class="btn-sm btn-primary">Posters</button>
+                        <button type="button" class="btn-sm btn-primary">Codes</button>
+                        <button type="button" class="btn-sm btn-primary">Project pages</button>
+                    </div>
+                </div>
+                <hr class="my-3" />
+                
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>6.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center">
+                        <img class="img-fluid" src="img/3D_syn_sm.png" alt="">
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Generative VoxelNet: Learning Energy-Based Models for 3D Shape Synthesis and Analysis</b></p>
+                        <p class="my-0">Jianwen Xie *, Zilong Zheng *, Ruiqi Gao, Wenguan Wang, Song-Chun Zhu, Ying Nian Wu</p>
+                        <p>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI) 2019</p>
+                        <button type="button" class="btn-sm btn-primary">Paper</button>
+                        <button type="button" class="btn-sm btn-primary">Posters</button>
+                        <button type="button" class="btn-sm btn-primary">Codes</button>
+                        <button type="button" class="btn-sm btn-primary">Project pages</button>
+                    </div>
+                </div>
+                <hr class="my-3" />
+                
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>7.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center">
+                        <img class="img-fluid" src="img/3D_syn_sm.png" alt="">
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Energy-Based Continuous Inverse Optimal Control</b></p>
+                        <p class="my-0">Yifei Xu, Jianwen Xie, Tianyang Zhao, Chris Baker, Yibiao Zhao, Ying Nian Wu</p>
+                        <p>NeurIPS workshop on Machine Learning for Autonomous Driving, 2020</p>
+                        <button type="button" class="btn-sm btn-primary">Paper</button>
+                        <button type="button" class="btn-sm btn-primary">Posters</button>
+                        <button type="button" class="btn-sm btn-primary">Codes</button>
+                        <button type="button" class="btn-sm btn-primary">Project pages</button>
+                    </div>
+                </div>
+                <hr class="my-3" />
+                
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>8.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center">
+                        <img class="img-fluid" src="img/3D_syn_sm.png" alt="">
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Generative PointNet: Deep Energy-Based Learning on Unordered Point Sets for 3D Generation, Reconstruction and Classification</b></p>
+                        <p class="my-0">Jianwen Xie *, Yifei Xu *, Zilong Zheng, Song-Chun Zhu, Ying Nian Wu (* equal contributions)</p>
+                        <p>IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2021</p>
+                        <button type="button" class="btn-sm btn-primary">Paper</button>
+                        <button type="button" class="btn-sm btn-primary">Posters</button>
+                        <button type="button" class="btn-sm btn-primary">Codes</button>
+                        <button type="button" class="btn-sm btn-primary">Project pages</button>
+                    </div>
+                </div>
+                <hr class="my-3" />
+                
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>9.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center">
+                        <img class="img-fluid" src="img/3D_syn_sm.png" alt="">
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Patchwise Generative ConvNet: Training Energy-Based Models from a Single Natural Image for Internal Learning</b></p>
+                        <p class="my-0">Zilong Zheng, Jianwen Xie, Ping Li</p>
+                        <p>IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2021</p>
+                        <button type="button" class="btn-sm btn-primary">Paper</button>
+                        <button type="button" class="btn-sm btn-primary">Posters</button>
+                        <button type="button" class="btn-sm btn-primary">Codes</button>
+                        <button type="button" class="btn-sm btn-primary">Project pages</button>
+                    </div>
+                </div>
+            </section>
+            <hr class="my-5" />
+            <section id="coop">
+
+                <!-- Heading -->
+                <h2 class="mb-5 font-weight-bold">Cooperative Network </h2>
+                
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>1.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center">
+                        <img class="img-fluid" src="img/3D_syn_sm.png" alt="">
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Cooperative learning of energy-based model and latent variable model via MCMC teaching</b></p>
+                        <p class="my-0">Jianwen Xie, Yang Lu, Ruiqi Gao, Song-Chun Zhu, and Ying Nian Wu</p>
+                        <p>AAAI Conference on Artificial Intelligence (AAAI) 2018)</p>
+                        <button type="button" class="btn-sm btn-primary">Paper</button>
+                        <button type="button" class="btn-sm btn-primary">Posters</button>
+                        <button type="button" class="btn-sm btn-primary">Codes</button>
+                        <button type="button" class="btn-sm btn-primary">Project pages</button>
+                    </div>
+                </div>
+                <hr class="my-3" />
+                
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>2.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center">
+                        <img class="img-fluid" src="img/3D_syn_sm.png" alt="">
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Cooperative Training of Descriptor and Generator Networks</b></p>
+                        <p class="my-0">Jianwen Xie, Yang Lu, Ruiqi Gao, Song-Chun Zhu, and Ying Nian Wu</p>
+                        <p>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI) 2019</p>
+                        <button type="button" class="btn-sm btn-primary">Paper</button>
+                        <button type="button" class="btn-sm btn-primary">Posters</button>
+                        <button type="button" class="btn-sm btn-primary">Codes</button>
+                        <button type="button" class="btn-sm btn-primary">Project pages</button>
+                    </div>
+                </div>
+                <hr class="my-3" />
+                
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>3.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center">
+                        <img class="img-fluid" src="img/3D_syn_sm.png" alt="">
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Cooperative Training of Fast Thinking Initializer and Slow Thinking Solver for Conditional Learning</b></p>
+                        <p class="my-0">Jianwen Xie *, Zilong Zheng *, Xiaolin Fang, Song-Chun Zhu, Ying Nian Wu (* equal contributions)</p>
+                        <p>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI) 2021</p>
+                        <button type="button" class="btn-sm btn-primary">Paper</button>
+                        <button type="button" class="btn-sm btn-primary">Posters</button>
+                        <button type="button" class="btn-sm btn-primary">Codes</button>
+                        <button type="button" class="btn-sm btn-primary">Project pages</button>
+                    </div>
+                </div>
+                <hr class="my-3" />
+                
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>4.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center">
+                        <img class="img-fluid" src="img/3D_syn_sm.png" alt="">
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Learning Cycle-Consistent Cooperative Networks via Alternating MCMC Teaching for Unsupervised Cross-Domain Translation</b></p>
+                        <p class="my-0">Jianwen Xie *, Zilong Zheng *, Xiaolin Fang, Song-Chun Zhu, Ying Nian Wu (* equal contributions)</p>
+                        <p>The Thirty-Fifth AAAI Conference on Artificial Intelligence (AAAI) 2021</p>
+                        <button type="button" class="btn-sm btn-primary">Paper</button>
+                        <button type="button" class="btn-sm btn-primary">Posters</button>
+                        <button type="button" class="btn-sm btn-primary">Codes</button>
+                        <button type="button" class="btn-sm btn-primary">Project pages</button>
+                    </div>
+                </div>
+                <hr class="my-3" />
+                
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>5.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center">
+                        <img class="img-fluid" src="img/3D_syn_sm.png" alt="">
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Learning Energy-Based Model with Variational Auto-Encoder as Amortized Sampler</b></p>
+                        <p class="my-0">Jianwen Xie, Zilong Zheng, Ping Li</p>
+                        <p>The Thirty-Fifth AAAI Conference on Artificial Intelligence (AAAI) 2021</p>
+                        <button type="button" class="btn-sm btn-primary">Paper</button>
+                        <button type="button" class="btn-sm btn-primary">Posters</button>
+                        <button type="button" class="btn-sm btn-primary">Codes</button>
+                        <button type="button" class="btn-sm btn-primary">Project pages</button>
+                    </div>
+                </div>
+            </section>
+            <hr class="my-5" />
+            <section id="other">
+
+                <!-- Heading -->
+                <h2 class="mb-5 font-weight-bold">Other </h2>
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>1.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center">
+                        <img class="img-fluid" src="img/paper/31.png" alt="">
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Filter, Random field, And Maximum Entropy (FRAME): towards a unified theory for texture modeling</b></p>
+                        <p class="my-0">Song-Chun Zhu, Ying Nian Wu, David Mumford</p>
+                        <p>International Journal of Computer Vision (IJCV) 1997.</p>
+                        <button type="button" class="btn-sm btn-primary">Paper</button>
+                        <button type="button" class="btn-sm btn-primary">Posters</button>
+                        <button type="button" class="btn-sm btn-primary">Codes</button>
+                        <button type="button" class="btn-sm btn-primary">Project pages</button>
+                    </div>
+                </div>
+                <hr class="my-3" />
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>2.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center">
+                        <img class="img-fluid" src="img/paper/32.png" alt="">
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Equivalence of Julesz ensembles and FRAME models</b></p>
+                        <p class="my-0"> Ying Nian Wu, Song-Chun Zhu, Xiuwen Liu</p>
+                        <p>International Journal of Computer Vision (IJCV) 2000.</p>
+                        <button type="button" class="btn-sm btn-primary">Paper</button>
+                        <button type="button" class="btn-sm btn-primary">Posters</button>
+                        <button type="button" class="btn-sm btn-primary">Codes</button>
+                        <button type="button" class="btn-sm btn-primary">Project pages</button>
+                    </div>
+                </div>
+                <hr class="my-3" />
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>3.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center">
+                        <img class="img-fluid" src="img/paper/33.png" alt="">
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Learning sparse FRAME models for natural image patterns</b></p>
+                        <p class="my-0"> Jianwen Xie, Wenze Hu, Song-Chun Zhu, and Ying Nian Wu</p>
+                        <p>International Journal of Computer Vision (IJCV) 2014.</p>
+                        <button type="button" class="btn-sm btn-primary">Paper</button>
+                        <button type="button" class="btn-sm btn-primary">Posters</button>
+                        <button type="button" class="btn-sm btn-primary">Codes</button>
+                        <button type="button" class="btn-sm btn-primary">Project pages</button>
+                    </div>
+                </div>
+                <hr class="my-3" />
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>4.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center">
+                        <img class="img-fluid" src="img/paper/34.png" alt="">
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Inducing Wavelets into Random Fields via Generative Boosting</b></p>
+                        <p class="my-0"> Jianwen Xie, Yang Lu, Song-Chun Zhu, and Ying Nian Wu </p>
+                        <p>Journal of Applied and Computational Harmonic Analysis (ACHA) 2015.</p>
+                        <button type="button" class="btn-sm btn-primary">Paper</button>
+                        <button type="button" class="btn-sm btn-primary">Posters</button>
+                        <button type="button" class="btn-sm btn-primary">Codes</button>
+                        <button type="button" class="btn-sm btn-primary">Project pages</button>
+                    </div>
+                </div>
+                <hr class="my-3" />
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>5.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center">
+                        <img class="img-fluid" src="img/paper/35.png" alt="">
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Generative modeling of convolutional neural networks</b></p>
+                        <p class="my-0"> Jifeng Dai, Yang Lu, and Ying Nian Wu</p>
+                        <p>International Conference on Learning Representations (ICLR) 2015.</p>
+                        <button type="button" class="btn-sm btn-primary">Paper</button>
+                        <button type="button" class="btn-sm btn-primary">Posters</button>
+                        <button type="button" class="btn-sm btn-primary">Codes</button>
+                        <button type="button" class="btn-sm btn-primary">Project pages</button>
+                    </div>
+                </div>
+                <hr class="my-3" />
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>6.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center">
+                        <img class="img-fluid" src="img/paper/36.png" alt="">
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Learning FRAME models using CNN filters</b></p>
+                        <p class="my-0"> Yang Lu, Song-Chun Zhu, and Ying Nian Wu</p>
+                        <p>The 30th AAAI Conference on Artificial Intelligence (AAAI) 2016.</p>
+                        <button type="button" class="btn-sm btn-primary">Paper</button>
+                        <button type="button" class="btn-sm btn-primary">Posters</button>
+                        <button type="button" class="btn-sm btn-primary">Codes</button>
+                        <button type="button" class="btn-sm btn-primary">Project pages</button>
+                    </div>
+                </div>
+                <hr class="my-3" />
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>7.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center">
+                        <img class="img-fluid" src="img/paper/37.png" alt="">
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Generative Hierarchical Learning of Sparse FRAME Models</b></p>
+                        <p class="my-0"> Jianwen Xie, Yifei Xu, Erik Nijkamp, Song-Chun Zhu, and Ying Nian Wu</p>
+                        <p>Proceedings of IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2017.</p>
+                        <button type="button" class="btn-sm btn-primary">Paper</button>
+                        <button type="button" class="btn-sm btn-primary">Posters</button>
+                        <button type="button" class="btn-sm btn-primary">Codes</button>
+                        <button type="button" class="btn-sm btn-primary">Project pages</button>
+                    </div>
+                </div>
+                <hr class="my-3" />
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>8.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center">
+                        <img class="img-fluid" src="img/paper/38.png" alt="">
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Learning generative ConvNets via multigrid modeling and sampling</b></p>
+                        <p class="my-0"> Ruiqi Gao*, Yang Lu*, Junpei Zhou, Song-Chun Zhu, and Ying Nian Wu</p>
+                        <p>Proceedings of IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2017.</p>
+                        <button type="button" class="btn-sm btn-primary">Paper</button>
+                        <button type="button" class="btn-sm btn-primary">Posters</button>
+                        <button type="button" class="btn-sm btn-primary">Codes</button>
+                        <button type="button" class="btn-sm btn-primary">Project pages</button>
+                    </div>
+                </div>
+                <hr class="my-3" />
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>9.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center">
+                        <img class="img-fluid" src="img/paper/39.png" alt="">
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Sparse and Deep Generalizations of the FRAME Model</b></p>
+                        <p class="my-0"> Ying Nian Wu, Jianwen Xie, Yang Lu, Song-Chun Zhu</p>
+                        <p>Annals of Mathematical Sciences and Applications (AMSA) 2018.</p>
+                        <button type="button" class="btn-sm btn-primary">Paper</button>
+                        <button type="button" class="btn-sm btn-primary">Posters</button>
+                        <button type="button" class="btn-sm btn-primary">Codes</button>
+                        <button type="button" class="btn-sm btn-primary">Project pages</button>
+                    </div>
+                </div>
+                <hr class="my-3" />
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>10.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center">
+                        <img class="img-fluid" src="img/paper/40.png" alt="">
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>On Learning Non-convergent Non-persistent Short-run MCMC Toward Energy-based Model</b></p>
+                        <p class="my-0"> Erik Nijkamp, Mitch Hill, Song-Chun Zhu, and Ying Nian Wu</p>
+                        <p>Neural Information Processing Systems (NeurIPS) 2019</p>
+                        <button type="button" class="btn-sm btn-primary">Paper</button>
+                        <button type="button" class="btn-sm btn-primary">Posters</button>
+                        <button type="button" class="btn-sm btn-primary">Codes</button>
+                        <button type="button" class="btn-sm btn-primary">Project pages</button>
+                    </div>
+                </div>
+                <hr class="my-3" />
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>11.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center">
+                        <img class="img-fluid" src="img/paper/41.png" alt="">
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Divergence triangle for joint training of generator model, energy-based model, and inference model</b></p>
+                        <p class="my-0"> Tian Han*, Erik Nijkamp*, Xiaolin Fang, Mitch Hill, Song-Chun Zhu, Ying Nian Wu</p>
+                        <p>Proceedings of IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2019. (* equal contribution)</p>
+                        <button type="button" class="btn-sm btn-primary">Paper</button>
+                        <button type="button" class="btn-sm btn-primary">Posters</button>
+                        <button type="button" class="btn-sm btn-primary">Codes</button>
+                        <button type="button" class="btn-sm btn-primary">Project pages</button>
+                    </div>
+                </div>
+                <hr class="my-3" />
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>12.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center">
+                        <img class="img-fluid" src="img/paper/42.png" alt="">
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>On the anatomy of MCMC-based maximum likelihood learning of energy-based models</b></p>
+                        <p class="my-0"> Erik Nijkamp*, Mitch Hill*, Tian Han, Song-Chun Zhu, and Ying Nian Wu</p>
+                        <p>AAAI Conference on Artificial Intelligence (AAAI) 2020. (*equal contribution)</p>
+                        <button type="button" class="btn-sm btn-primary">Paper</button>
+                        <button type="button" class="btn-sm btn-primary">Posters</button>
+                        <button type="button" class="btn-sm btn-primary">Codes</button>
+                        <button type="button" class="btn-sm btn-primary">Project pages</button>
+                    </div>
+                </div>
+                <hr class="my-3" />
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>13.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center">
+                        <img class="img-fluid" src="img/paper/43.png" alt="">
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Joint training of variational auto-encoder and latent energy-based model</b></p>
+                        <p class="my-0"> Tian Han, Erik Nijkamp, Linqi Zhou, Bo Pang, Song-Chun Zhu, and Ying Nian Wu</p>
+                        <p>Computer Vision and Pattern Recognition (CVPR) 2020.</p>
+                        <button type="button" class="btn-sm btn-primary">Paper</button>
+                        <button type="button" class="btn-sm btn-primary">Posters</button>
+                        <button type="button" class="btn-sm btn-primary">Codes</button>
+                        <button type="button" class="btn-sm btn-primary">Project pages</button>
+                    </div>
+                </div>
+                <hr class="my-3" />
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>14.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center">
+                        <img class="img-fluid" src="img/paper/44.png" alt="">
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Flow contrastive estimation of energy-based model. </b></p>
+                        <p class="my-0"> Ruiqi Gao, Erik Nijkamp, Diederik Kingma, Zhen Xu, Andrew Dai, and Ying Nian Wu. </p>
+                        <p>Proceedings of IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2020.</p>
+                        <button type="button" class="btn-sm btn-primary">Paper</button>
+                        <button type="button" class="btn-sm btn-primary">Posters</button>
+                        <button type="button" class="btn-sm btn-primary">Codes</button>
+                        <button type="button" class="btn-sm btn-primary">Project pages</button>
+                    </div>
+                </div>
+                <hr class="my-3" />
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>15.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center">
+                        <img class="img-fluid" src="img/paper/45.png" alt="">
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Learning energy-based model with ow-based backbone by neural transport MCMC</b></p>
+                        <p class="my-0"> Erik Nijkamp*, Ruiqi Gao*, Pavel Sountsov, Srinivas Vasudevan, Bo Pang, Song-Chun Zhu, and Ying Nian Wu</p>
+                        <p>ArXiv 2020. (*equal contribution)</p>
+                        <button type="button" class="btn-sm btn-primary">Paper</button>
+                        <button type="button" class="btn-sm btn-primary">Posters</button>
+                        <button type="button" class="btn-sm btn-primary">Codes</button>
+                        <button type="button" class="btn-sm btn-primary">Project pages</button>
+                    </div>
+                </div>
+                <hr class="my-3" />
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>16.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center">
+                        <img class="img-fluid" src="img/paper/46.png" alt="">
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Learning latent space energy-based prior model</b></p>
+                        <p class="my-0"> Bo Pang*, Tian Han*, Erik Nijkamp*, Song-Chun Zhu, and Ying Nian Wu</p>
+                        <p>Neural Information Processing Systems (NeurIPS) 2020. (*equal contribution)</p>
+                        <button type="button" class="btn-sm btn-primary">Paper</button>
+                        <button type="button" class="btn-sm btn-primary">Posters</button>
+                        <button type="button" class="btn-sm btn-primary">Codes</button>
+                        <button type="button" class="btn-sm btn-primary">Project pages</button>
+                    </div>
+                </div>
+                
+            </section>
+            <hr class="my-5" />
+            </div>
+    </main>
+    <!--Main layout-->
+
+    <!-- Footer -->
+    <footer class="page-footer font-small unique-color-dark">
+
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">
+                Web designer: <a href="https://yfxu.me">Yifei Xu</a>; 2018 Copyright:
+                <a href="https://mdbootstrap.com/bootstrap-tutorial/">
+          MDBootstrap.com</a
+        >
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+    <script
+      type="text/javascript"
+      src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.2/js/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.2/js/popper.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.2/js/bootstrap.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.2/js/mdb.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/js/bundles/4.19.2/compiled-addons.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/js/plugins/mdb-plugins-gathered.min.js"
+    ></script>
+    <div class="hiddendiv common"></div>
+  </body>
+</html>
