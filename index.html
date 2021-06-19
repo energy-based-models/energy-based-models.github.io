@@ -302,6 +302,8 @@
                                 11:00 AM - 03:00 PM (PDT, UTC-7) June 19th, 2021
                             </h5>
                             <h5 class="white-text my-3">The tutorial will be pre-recorded. The video will be released here at the start time (11AM PDT). Meanwhile, virtual zoom room will take Q&A section during the last half hour of the tutorial (2:30PM - 3PM PDT)</h5>
+                            <h5 class="white-text my-3" style="background-color: rgb(77, 77, 255);">Handouts including slides will be available shortly.</h5>
+                            <!-- If you have any questions, please contact Jianwen Xie: <a href="mailto:jianwen@ucla.edu">jianwen@ucla.edu</a>. -->
                             <!-- <button type="button" class="btn btn-outline-light btn-rounded">Zoom Link</button> -->
                             
                             <!-- <div class="row">
@@ -349,29 +351,27 @@
 
             <hr class="my-2" />
 
-            <!-- <section id="Speakers">
+            <section id="Speakers">
                 <h2 class="mb-5 font-weight-bold" , style="margin-top:40px">Tutorial Video</h2>
                 <h3>Part I : Fundamentals</h3>
                 <div class="container">
-                    <iframe width="100%" height="75%" src="https://www.youtube.com/embed/46vhKVzBABE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="70%" height="50%" style="display:block;margin: 0 auto;"src="https://www.youtube.com/embed/xZWu4-rV45A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <hr class="my-3" />
                 <h3>Part II : Advanced</h3>
                 <div class="container">
-                    <iframe width="100%" height="75%" src="https://www.youtube.com/embed/46vhKVzBABE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="70%" height="50%" style="display:block;margin: 0 auto;"src="https://www.youtube.com/embed/cqnWywy3GuM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <hr class="my-3" />
                 <h3>Part III : Applications</h3>
                 <div class="container">
-                    <iframe width="100%" height="75%" src="https://www.youtube.com/embed/46vhKVzBABE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="70%" height="50%" style="display:block;margin: 0 auto;"src="https://www.youtube.com/embed/CVwlMTKcYUE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <hr class="my-3" />
                 
-
-                Handouts including slides will be available shortly. If you have any questions, please contact Jianwen Xie: <a href="mailto:jianwen@ucla.edu">jianwen@ucla.edu</a>.
                 
             </section>
-            <hr class="my-2" /> -->
+            <hr class="my-2" />
 
             <!--Section: Examples-->
             <section id="Speakers">
@@ -429,10 +429,10 @@
                                     <li>Probabilistic models of images</li>
                                     <li>Gibbs distribution in statistical physics</li>
                                     <li>Filters, Random Fields and Maximum Entropy (FRAME) models</li>
+                                    <li>Generative ConvNet: EBM parameterized by modern neural network</li>
                                 </ul>
                                 <h6 class="font-weight-bold">2. Elements of Energy-Based Generative Learning</h6>
                                 <ul>
-                                    <li>Generative ConvNet: EBM parameterized by modern neural network</li>
                                     <li>Understanding Kullback-Leibler divergences</li>
                                     <li>Maximum likelihood learning, analysis by synthesis</li>
                                     <li>Gradient-based MCMC and Langevin sampling</li>
@@ -470,8 +470,8 @@
                             <div class="card-body">
                                 <h6 class="font-weight-bold">1: Strategy for Efficient Learning and Sampling</h6>
                                 <ul>
-                                    <li>Multi-grid learning and sampling for EBMs </li>
                                     <li>Multi-stage expanding and sampling for EBMs</li>
+                                    <li>Multi-grid learning and sampling for EBMs </li>
                                     <li>Learning EBM by recovery likelihood</li>
                                 </ul>
                                 <h6 class="font-weight-bold">2. Energy-Based Generative Frameworks</h6>
@@ -506,14 +506,17 @@
                                 <h6 class="font-weight-bold">2: Energy-Based Generative Cooperative Networks</h6>
                                 <ul>
                                     <li>Supervised conditional learning</li>
+                                    <li>Unconditioned image, video, 3D shape synthesis</li>
                                     <li>Unsupervised image-to-image translation</li>
                                     <li>Unsupervised sequence-to-sequence translation</li>
                                 </ul>
                                 <h6 class="font-weight-bold">3: Latent Space Energy-Based Model</h6>
                                 <ul>
-                                    <li>Trajectory prediction with latent belief energy-based model</li>
-                                    <li>Learning latent space energy-based prior model for molecule generation</li>
-                                    <li>Semi-supervised learning by latent space energy-based model of symbol-vector coupling</li>
+                                    <li>Text Generation</li>
+                                    <li>Molecule Generation</li>
+                                    <li>Anomaly Detection</li>
+                                    <li>Trajectory Prediction</li>
+                                    <li>Semi-Supervised Learning</li>
                                 </ul>
                             </div>
                             </div>
@@ -565,6 +568,15 @@
       type="text/javascript"
       src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/js/plugins/mdb-plugins-gathered.min.js"
     ></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-43X8292BRF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-43X8292BRF');
+    </script>
     <div class="hiddendiv common"></div>
   </body>
 </html>
