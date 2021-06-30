@@ -120,11 +120,14 @@
             transform: translateY(-50%);
         }
         .image-fluid {
-            padding: 20px;
-            height: 140px !important;
+            padding: 0px !important;
             text-align: center;
             background-size : cover;
             background-position: center center;
+        }
+        .paper_img {
+            width: 210px;
+            height: 140px;
         }
     </style>
     <style>
@@ -305,318 +308,21 @@
     <main class="mt-5">
         <div class="container">
 
-            <section id="method">
+            <section id="frame">
 
                 <!-- Heading -->
-                <h2 class="mb-5 font-weight-bold">Energy-Based Generative ConvNet</h2>
+                <h2 class="mb-5 font-weight-bold">(Filter, Random field, Maximum entropy) FRAME Models</h2>
                 <div class="row">
                     <div class="col-1 float-right" style="text-align:right;padding:13px">
                         <p><b>1.</b></p>
                     </div>
-                    <div class="col-md-3 col-sm-4 align-self-center image-fluid" style="background-image: url('img/paper11.png')" alt="">
-                    </div>
-                    <div class="col-md-8 col-sm-7 align-self-center">
-                        <p><b>A Theory of Generative ConvNet</b></p>
-                        <p class="my-0">Jianwen Xie *, Yang Lu *, Song-Chun Zhu, and Ying Nian Wu</p>
-                        <p>International Conference on Machine Learning (ICML) 2016. (* equal contributions)</p>
-                        <a href="http://www.stat.ucla.edu/~jxie/download/GenerativeConvNet.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
-                        
-                        
-                    </div>
-                </div>
-                <hr class="my-3" />
-                <div class="row">
-                    <div class="col-1 float-right" style="text-align:right;padding:13px">
-                        <p><b>2.</b></p>
-                    </div>
-                    <div class="col-md-3 col-sm-4 align-self-center image-fluid" style="background-image: url('img/paper12.gif')" alt="">
-                    </div>
-                    <div class="col-md-8 col-sm-7 align-self-center">
-                        <p><b>Synthesizing Dynamic Pattern by Spatial-Temporal Generative ConvNet</b></p>
-                        <p class="my-0">Jianwen Xie, Song-Chun Zhu, and Ying Nian Wu</p>
-                        <p>International Conference on Computer Vision and Pattern Recognition (CVPR) 2017</p>
-                        <a href="http://www.stat.ucla.edu/~jxie/STGConvNet/STGConvNet_file/doc/STGConvNet.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
-                        <a href="http://www.stat.ucla.edu/~jxie/STGConvNet/STGConvNet.html"><button type="button" class="btn-sm btn-primary">Project pages</button></a>
-                        
-                    </div>
-                </div>
-                <hr class="my-3" />
-                <div class="row">
-                    <div class="col-1 float-right" style="text-align:right;padding:13px">
-                        <p><b>3.</b></p>
-                    </div>
-                    <div class="col-md-3 col-sm-4 align-self-center image-fluid" style="background-image: url('img/paper13.png')" alt="">
-                    </div>
-                    <div class="col-md-8 col-sm-7 align-self-center">
-                        <p><b>Learning Descriptor Networks for 3D Shape Synthesis and Analysis</b></p>
-                        <p class="my-0">Jianwen Xie *, Zilong Zheng *, Ruiqi Gao, Wenguan Wang, Song-Chun Zhu, Ying Nian Wu</p>
-                        <p>IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2018</p>
-                        <a href="http://www.stat.ucla.edu/~jxie/3DDescriptorNet/3DDescriptorNet_file/doc/3DDescriptorNet.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
-                        <a href="http://www.stat.ucla.edu/~jxie/3DDescriptorNet/3DDescriptorNet.html"><button type="button" class="btn-sm btn-primary">Project pages</button></a>
-                        
-                    </div>
-                </div>
-                <hr class="my-3" />
-                <div class="row">
-                    <div class="col-1 float-right" style="text-align:right;padding:13px">
-                        <p><b>4.</b></p>
-                    </div>
-                    <div class="col-md-3 col-sm-4 align-self-center image-fluid" style="background-image: url('img/paper14.png')" alt="">
-                    </div>
-                    <div class="col-md-8 col-sm-7 align-self-center">
-                        <p><b>Learning Energy-Based Models as Generative ConvNets via Multi-grid Modeling and Sampling</b></p>
-                        <p class="my-0">Ruiqi Gao*, Yang Lu*, Junpei Zhou, Song-Chun Zhu, Ying Nian Wu (* equal contributions)</p>
-                        <p>IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2018</p>
-                        <a href="https://arxiv.org/pdf/1709.08868.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
-                        
-                        
-                    </div>
-                </div>
-                <hr class="my-3" />
-                <div class="row">
-                    <div class="col-1 float-right" style="text-align:right;padding:13px">
-                        <p><b>5.</b></p>
-                    </div>
-                    <div class="col-md-3 col-sm-4 align-self-center image-fluid" style="background-image: url('img/paper15.png')" alt="">
-                    </div>
-                    <div class="col-md-8 col-sm-7 align-self-center">
-                        <p><b>Learning Energy-based Spatial-Temporal Generative ConvNet for Dynamic Patterns</b></p>
-                        <p class="my-0">Jianwen Xie, Song-Chun Zhu, and Ying Nian Wu</p>
-                        <p>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI) 2019</p>
-                        <a href="http://www.stat.ucla.edu/~jxie/STGConvNet/STGConvNet_file/doc/STGConvNet_PAMI.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
-                        <a href="http://www.stat.ucla.edu/~jxie/STGConvNet/STGConvNet.html"><button type="button" class="btn-sm btn-primary">Project pages</button></a>
-                        
-                    </div>
-                </div>
-                <hr class="my-3" />
-                <div class="row">
-                    <div class="col-1 float-right" style="text-align:right;padding:13px">
-                        <p><b>6.</b></p>
-                    </div>
-                    <div class="col-md-3 col-sm-4 align-self-center image-fluid" style="background-image: url('img/paper16.png')" alt="">
-                    </div>
-                    <div class="col-md-8 col-sm-7 align-self-center">
-                        <p><b>Generative VoxelNet: Learning Energy-Based Models for 3D Shape Synthesis and Analysis</b></p>
-                        <p class="my-0">Jianwen Xie *, Zilong Zheng *, Ruiqi Gao, Wenguan Wang, Song-Chun Zhu, Ying Nian Wu</p>
-                        <p>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI) 2019</p>
-                        <a href="http://www.stat.ucla.edu/~jxie/3DEBM/3DEBM_file/doc/gVoxelNet.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
-                        <a href="http://www.stat.ucla.edu/~jxie/3DEBM/"><button type="button" class="btn-sm btn-primary">Project pages</button></a>
-                        
-                    </div>
-                </div>
-                <hr class="my-3" />
-                <div class="row">
-                    <div class="col-1 float-right" style="text-align:right;padding:13px">
-                        <p><b>7.</b></p>
-                    </div>
-                    <div class="col-md-3 col-sm-4 align-self-center image-fluid" style="background-image: url('img/paper17.gif')" alt="">
-                    </div>
-                    <div class="col-md-8 col-sm-7 align-self-center">
-                        <p><b>Energy-Based Continuous Inverse Optimal Control</b></p>
-                        <p class="my-0">Yifei Xu, Jianwen Xie, Tianyang Zhao, Chris Baker, Yibiao Zhao, Ying Nian Wu</p>
-                        <p>NeurIPS workshop on Machine Learning for Autonomous Driving, 2020</p>
-                        <a href="https://arxiv.org/pdf/1904.05453.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
-                        <a href="http://www.stat.ucla.edu/~yifeixu/meioc/"><button type="button" class="btn-sm btn-primary">Project pages</button></a>
-                        
-                    </div>
-                </div>
-                <hr class="my-3" />
-                <div class="row">
-                    <div class="col-1 float-right" style="text-align:right;padding:13px">
-                        <p><b>8.</b></p>
-                    </div>
-                    <div class="col-md-3 col-sm-4 align-self-center image-fluid" style="background-image: url('img/paper18.png')" alt="">
-                    </div>
-                    <div class="col-md-8 col-sm-7 align-self-center">
-                        <p><b>Generative PointNet: Deep Energy-Based Learning on Unordered Point Sets for 3D Generation, Reconstruction and Classification</b></p>
-                        <p class="my-0">Jianwen Xie *, Yifei Xu *, Zilong Zheng, Song-Chun Zhu, Ying Nian Wu (* equal contributions)</p>
-                        <p>IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2021</p>
-                        <a href="http://www.stat.ucla.edu/~jxie/GPointNet/GPointNet_file/doc/GPointNet.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
-                        <a href="http://www.stat.ucla.edu/~jxie/GPointNet/"><button type="button" class="btn-sm btn-primary">Project pages</button></a>
-                        
-                    </div>
-                </div>
-                <hr class="my-3" />
-                <div class="row">
-                    <div class="col-1 float-right" style="text-align:right;padding:13px">
-                        <p><b>9.</b></p>
-                    </div>
-                    <div class="col-md-3 col-sm-4 align-self-center image-fluid" style="background-image: url('img/paper19.png')" alt="">
-                    </div>
-                    <div class="col-md-8 col-sm-7 align-self-center">
-                        <p><b>Patchwise Generative ConvNet: Training Energy-Based Models from a Single Natural Image for Internal Learning</b></p>
-                        <p class="my-0">Zilong Zheng, Jianwen Xie, Ping Li</p>
-                        <p>IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2021</p>
-                        <a href="http://www.stat.ucla.edu/~jxie/personalpage_file/publications/internal_EBM.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
-                        
-                        
-                    </div>
-            </section>
-            <hr class="my-5" />
-            <section id="coop">
-                <h2 class="mb-5 font-weight-bold">Cooperative Network </h2>
-                <div class="row">
-                    <div class="col-1 float-right" style="text-align:right;padding:13px">
-                        <p><b>1.</b></p>
-                    </div>
-                    <div class="col-md-3 col-sm-4 align-self-center image-fluid" style="background-image: url('img/paper21.png')" alt="">
-                    </div>
-                    <div class="col-md-8 col-sm-7 align-self-center">
-                        <p><b>Cooperative learning of energy-based model and latent variable model via MCMC teaching</b></p>
-                        <p class="my-0">Jianwen Xie, Yang Lu, Ruiqi Gao, Song-Chun Zhu, and Ying Nian Wu</p>
-                        <p>AAAI Conference on Artificial Intelligence (AAAI) 2018)</p>
-                        <a href="http://www.stat.ucla.edu/~ywu/CoopNets/doc/CoopNets_AAAI.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
-                        <a href="http://www.stat.ucla.edu/~ywu/CoopNets/main.html"><button type="button" class="btn-sm btn-primary">Project pages</button></a>
-                        
-                    </div>
-                </div>
-                <hr class="my-3" />
-                <div class="row">
-                    <div class="col-1 float-right" style="text-align:right;padding:13px">
-                        <p><b>2.</b></p>
-                    </div>
-                    <div class="col-md-3 col-sm-4 align-self-center image-fluid" style="background-image: url('img/paper22.jpg')" alt="">
-                    </div>
-                    <div class="col-md-8 col-sm-7 align-self-center">
-                        <p><b>Cooperative Training of Descriptor and Generator Networks</b></p>
-                        <p class="my-0">Jianwen Xie, Yang Lu, Ruiqi Gao, Song-Chun Zhu, and Ying Nian Wu</p>
-                        <p>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI) 2019</p>
-                        <a href="http://www.stat.ucla.edu/~jxie/CoopNets/CoopNets_files/doc/CoopNets_PAMI.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
-                        <a href="http://www.stat.ucla.edu/~jxie/CoopNets/CoopNets.html"><button type="button" class="btn-sm btn-primary">Project pages</button></a>
-                        
-                    </div>
-                </div>
-                <hr class="my-3" />
-                <div class="row">
-                    <div class="col-1 float-right" style="text-align:right;padding:13px">
-                        <p><b>3.</b></p>
-                    </div>
-                    <div class="col-md-3 col-sm-4 align-self-center image-fluid" style="background-image: url('img/paper23.png')" alt="">
-                    </div>
-                    <div class="col-md-8 col-sm-7 align-self-center">
-                        <p><b>Cooperative Training of Fast Thinking Initializer and Slow Thinking Solver for Conditional Learning</b></p>
-                        <p class="my-0">Jianwen Xie *, Zilong Zheng *, Xiaolin Fang, Song-Chun Zhu, Ying Nian Wu (* equal contributions)</p>
-                        <p>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI) 2021</p>
-                        <a href="http://www.stat.ucla.edu/~jxie/CCoopNets/CCoopNets_file/doc/CCoopNets.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
-                        <a href="http://www.stat.ucla.edu/~jxie/CCoopNets/"><button type="button" class="btn-sm btn-primary">Project pages</button></a>
-                        
-                    </div>
-                </div>
-                <hr class="my-3" />
-                <div class="row">
-                    <div class="col-1 float-right" style="text-align:right;padding:13px">
-                        <p><b>4.</b></p>
-                    </div>
-                    <div class="col-md-3 col-sm-4 align-self-center image-fluid" style="background-image: url('img/paper24.png')" alt="">
-                    </div>
-                    <div class="col-md-8 col-sm-7 align-self-center">
-                        <p><b>Learning Cycle-Consistent Cooperative Networks via Alternating MCMC Teaching for Unsupervised Cross-Domain Translation</b></p>
-                        <p class="my-0">Jianwen Xie *, Zilong Zheng *, Xiaolin Fang, Song-Chun Zhu, Ying Nian Wu (* equal contributions)</p>
-                        <p>The Thirty-Fifth AAAI Conference on Artificial Intelligence (AAAI) 2021</p>
-                        <a href="http://www.stat.ucla.edu/~jxie/CycleCoopNets/cyclecoopnets_file/doc/cycleCoopNets.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
-                        <a href="http://www.stat.ucla.edu/~jxie/CycleCoopNets/"><button type="button" class="btn-sm btn-primary">Project pages</button></a>
-                        
-                    </div>
-                </div>
-                <hr class="my-3" />
-                <div class="row">
-                    <div class="col-1 float-right" style="text-align:right;padding:13px">
-                        <p><b>5.</b></p>
-                    </div>
-                    <div class="col-md-3 col-sm-4 align-self-center image-fluid" style="background-image: url('img/paper25.png')" alt="">
-                    </div>
-                    <div class="col-md-8 col-sm-7 align-self-center">
-                        <p><b>Learning Energy-Based Model with Variational Auto-Encoder as Amortized Sampler</b></p>
-                        <p class="my-0">Jianwen Xie, Zilong Zheng, Ping Li</p>
-                        <p>The Thirty-Fifth AAAI Conference on Artificial Intelligence (AAAI) 2021</p>
-                        <a href="https://arxiv.org/pdf/2012.14936.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
-                        
-                        
-                    </div>
-                </div>
-            </section>
-            <hr class="my-5" />
-            <section id="latent">
-                <h2 class="mb-5 font-weight-bold">Latent space EBM</h2>
-                <div class="row">
-                    <div class="col-1 float-right" style="text-align:right;padding:13px">
-                        <p><b>1.</b></p>
-                    </div>
-                    <div class="col-md-3 col-sm-4 align-self-center image-fluid" style="background-image: url('img/paper51.png')" alt="">
-                    </div>
-                    <div class="col-md-8 col-sm-7 align-self-center">
-                        <p><b>Learning latent space energy-based prior model</b></p>
-                        <p class="my-0"> Bo Pang*, Tian Han*, Erik Nijkamp*, Song-Chun Zhu, and Ying Nian Wu</p>
-                        <p>Neural Information Processing Systems (NeurIPS) 2020. (*equal contribution)</p>
-                        <a href="https://arxiv.org/pdf/2006.08205.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
-                        <a href="https://bpucla.github.io/latent-space-ebm-prior-project/"><button type="button" class="btn-sm btn-primary">Project pages</button></a>
-                        
-                    </div>
-                </div>
-                <hr class="my-3" />
-                <div class="row">
-                    <div class="col-1 float-right" style="text-align:right;padding:13px">
-                        <p><b>2.</b></p>
-                    </div>
-                    <div class="col-md-3 col-sm-4 align-self-center image-fluid" style="background-image: url('img/paper52.png')" alt="">
-                    </div>
-                    <div class="col-md-8 col-sm-7 align-self-center">
-                        <p><b>Learning latent space energy-based prior model for molecule generation</b></p>
-                        <p class="my-0">Bo Pang, Tian Han, and Ying Nian Wu</p>
-                        <p>Machine Learning for Molecules Workshop at NeurIPS 2020</p>
-                        <a href="https://arxiv.org/pdf/2010.09351.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
-                        
-                        
-                    </div>
-                </div>
-                <hr class="my-3" />
-                <div class="row">
-                    <div class="col-1 float-right" style="text-align:right;padding:13px">
-                        <p><b>3.</b></p>
-                    </div>
-                    <div class="col-md-3 col-sm-4 align-self-center image-fluid" style="background-image: url('img/paper53.png')" alt="">
-                    </div>
-                    <div class="col-md-8 col-sm-7 align-self-center">
-                        <p><b>Semi-supervised learning by latent space energy-based model of symbol-vector coupling</b></p>
-                        <p class="my-0">Bo Pang, Erik Nijkamp, Jiali Cui, Tian Han, and Ying Nian Wu</p>
-                        <p>ICBINB Workshop at NeurIPS 2020</p>
-                        <a href="https://arxiv.org/pdf/2010.09359.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
-                        
-                        
-                    </div>
-                </div>
-                <hr class="my-3" />
-                <div class="row">
-                    <div class="col-1 float-right" style="text-align:right;padding:13px">
-                        <p><b>4.</b></p>
-                    </div>
-                    <div class="col-md-3 col-sm-4 align-self-center image-fluid" style="background-image: url('img/paper54.png')" alt="">
-                    </div>
-                    <div class="col-md-8 col-sm-7 align-self-center">
-                        <p><b>Trajectory prediction with latent belief energy-based model</b></p>
-                        <p class="my-0">Bo Pang, Tianyang Zhao, Xu Xie, and Ying Nian Wu</p>
-                        <p>Proceedings of IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</p>
-                        <a href="https://arxiv.org/pdf/2104.03086.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
-                        <a href="https://github.com/bpucla/lbebm"><button type="button" class="btn-sm btn-primary">Project pages</button></a>
-                        
-                    </div>
-                </div>
-            </section>
-            <hr class="my-5" />
-            <section id="other">
-
-                <!-- Heading -->
-                <h2 class="mb-5 font-weight-bold">Other</h2>
-                <div class="row">
-                    <div class="col-1 float-right" style="text-align:right;padding:13px">
-                        <p><b>1.</b></p>
-                    </div>
-                    <div class="col-md-3 col-sm-4 align-self-center image-fluid" style="background-image: url('img/paper31.png')" alt="">
+                    <div class="col-md-3 col-sm-4 align-self-center image-fluid">
+                        <img class="paper_img" src="img/31.png" alt="" />
                     </div>
                     <div class="col-md-8 col-sm-7 align-self-center">
                         <p><b>Filter, Random field, And Maximum Entropy (FRAME): towards a unified theory for texture modeling</b></p>
                         <p class="my-0">Song-Chun Zhu, Ying Nian Wu, David Mumford</p>
-                        <p>International Journal of Computer Vision (IJCV) 1997.</p>
+                        <p>International Journal of Computer Vision (IJCV) 1997</p>
                         <a href="http://www.stat.ucla.edu/~ywu/research/papers/ijcv.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
                         
                         
@@ -627,7 +333,25 @@
                     <div class="col-1 float-right" style="text-align:right;padding:13px">
                         <p><b>2.</b></p>
                     </div>
-                    <div class="col-md-3 col-sm-4 align-self-center image-fluid" style="background-image: url('img/paper32.gif')" alt="">
+                    <div class="col-md-3 col-sm-4 align-self-center image-fluid">
+                        <img class="paper_img" src="img/30.png" alt="" />
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Grade: Gibbs Reaction and Diffusion Equations</b></p>
+                        <p class="my-0">Song-Chun Zhu, David Mumford</p>
+                        <p>International Conference on Computer Vision (ICCV) 1998</p>
+                        <a href="https://www.dam.brown.edu/people/mumford/vision/papers/1998a--GibbsR-D-Zhu-IEEE.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
+                        
+                        
+                    </div>
+                </div>
+                <hr class="my-3" />
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>3.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center image-fluid">
+                        <img class="paper_img" src="img/32.png" alt="" />
                     </div>
                     <div class="col-md-8 col-sm-7 align-self-center">
                         <p><b>Equivalence of Julesz ensembles and FRAME models</b></p>
@@ -641,9 +365,27 @@
                 <hr class="my-3" />
                 <div class="row">
                     <div class="col-1 float-right" style="text-align:right;padding:13px">
-                        <p><b>3.</b></p>
+                        <p><b>4.</b></p>
                     </div>
-                    <div class="col-md-3 col-sm-4 align-self-center image-fluid" style="background-image: url('img/paper33.gif')" alt="">
+                    <div class="col-md-3 col-sm-4 align-self-center image-fluid">
+                        <img class="paper_img" src="img/38.png" alt="" />
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Learning Inhomogeneous FRAME Models for Object Patterns</b></p>
+                        <p class="my-0">Jianwen Xie, Wenze Hu, Song-Chun Zhu, Ying Nian Wu</p>
+                        <p>IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2014</p>
+                        <a href="http://www.stat.ucla.edu/~jxie/iFRAME_file/doc/iFRAME.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
+                        
+                        
+                    </div>
+                </div>
+                <hr class="my-3" />
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>5.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center image-fluid">
+                        <img class="paper_img" src="img/33.png" alt="" />
                     </div>
                     <div class="col-md-8 col-sm-7 align-self-center">
                         <p><b>Learning sparse FRAME models for natural image patterns</b></p>
@@ -657,9 +399,10 @@
                 <hr class="my-3" />
                 <div class="row">
                     <div class="col-1 float-right" style="text-align:right;padding:13px">
-                        <p><b>4.</b></p>
+                        <p><b>6.</b></p>
                     </div>
-                    <div class="col-md-3 col-sm-4 align-self-center image-fluid" style="background-image: url('img/paper34.jpg')" alt="">
+                    <div class="col-md-3 col-sm-4 align-self-center image-fluid">
+                        <img class="paper_img" src="img/34.png" alt="" />
                     </div>
                     <div class="col-md-8 col-sm-7 align-self-center">
                         <p><b>Inducing Wavelets into Random Fields via Generative Boosting</b></p>
@@ -673,41 +416,10 @@
                 <hr class="my-3" />
                 <div class="row">
                     <div class="col-1 float-right" style="text-align:right;padding:13px">
-                        <p><b>5.</b></p>
-                    </div>
-                    <div class="col-md-3 col-sm-4 align-self-center image-fluid" style="background-image: url('img/paper35.png')" alt="">
-                    </div>
-                    <div class="col-md-8 col-sm-7 align-self-center">
-                        <p><b>Generative modeling of convolutional neural networks</b></p>
-                        <p class="my-0"> Jifeng Dai, Yang Lu, and Ying Nian Wu</p>
-                        <p>International Conference on Learning Representations (ICLR) 2015.</p>
-                        <a href="http://www.stat.ucla.edu/~ywu/ICLR2015.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
-                        <a href="http://www.stat.ucla.edu/~ywu/generativeCNN/main.html"><button type="button" class="btn-sm btn-primary">Project pages</button></a>
-                        
-                    </div>
-                </div>
-                <hr class="my-3" />
-                <div class="row">
-                    <div class="col-1 float-right" style="text-align:right;padding:13px">
-                        <p><b>6.</b></p>
-                    </div>
-                    <div class="col-md-3 col-sm-4 align-self-center image-fluid" style="background-image: url('img/paper36.gif')" alt="">
-                    </div>
-                    <div class="col-md-8 col-sm-7 align-self-center">
-                        <p><b>Learning FRAME models using CNN filters</b></p>
-                        <p class="my-0"> Yang Lu, Song-Chun Zhu, and Ying Nian Wu</p>
-                        <p>The 30th AAAI Conference on Artificial Intelligence (AAAI) 2016.</p>
-                        <a href="https://arxiv.org/pdf/1509.08379.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
-                        <a href="http://www.stat.ucla.edu/~ywu/deepFRAME/main.html"><button type="button" class="btn-sm btn-primary">Project pages</button></a>
-                        
-                    </div>
-                </div>
-                <hr class="my-3" />
-                <div class="row">
-                    <div class="col-1 float-right" style="text-align:right;padding:13px">
                         <p><b>7.</b></p>
                     </div>
-                    <div class="col-md-3 col-sm-4 align-self-center image-fluid" style="background-image: url('img/paper37.jpg')" alt="">
+                    <div class="col-md-3 col-sm-4 align-self-center image-fluid">
+                        <img class="paper_img" src="img/37.png" alt="" />
                     </div>
                     <div class="col-md-8 col-sm-7 align-self-center">
                         <p><b>Generative Hierarchical Learning of Sparse FRAME Models</b></p>
@@ -723,7 +435,25 @@
                     <div class="col-1 float-right" style="text-align:right;padding:13px">
                         <p><b>8.</b></p>
                     </div>
-                    <div class="col-md-3 col-sm-4 align-self-center image-fluid" style="background-image: url('img/paper39.png')" alt="">
+                    <div class="col-md-3 col-sm-4 align-self-center image-fluid">
+                        <img class="paper_img" src="img/36.png" alt="" />
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Learning FRAME models using CNN filters</b></p>
+                        <p class="my-0"> Yang Lu, Song-Chun Zhu, and Ying Nian Wu</p>
+                        <p>The 30th AAAI Conference on Artificial Intelligence (AAAI) 2016.</p>
+                        <a href="https://arxiv.org/pdf/1509.08379.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
+                        <a href="http://www.stat.ucla.edu/~ywu/deepFRAME/main.html"><button type="button" class="btn-sm btn-primary">Project pages</button></a>
+                        
+                    </div>
+                </div>
+                <hr class="my-3" />
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>9.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center image-fluid">
+                        <img class="paper_img" src="img/39.png" alt="" />
                     </div>
                     <div class="col-md-8 col-sm-7 align-self-center">
                         <p><b>Sparse and Deep Generalizations of the FRAME Model</b></p>
@@ -734,12 +464,118 @@
                         
                     </div>
                 </div>
+            </section>
+            <hr class="my-5" />
+            <section id="ebm">
+                <h2 class="mb-5 font-weight-bold">Energy-based Generative ConvNet</h2>
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>1.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center image-fluid">
+                        <img class="paper_img" src="img/11.png" alt="" />
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>A Theory of Generative ConvNet</b></p>
+                        <p class="my-0">Jianwen Xie *, Yang Lu *, Song-Chun Zhu, and Ying Nian Wu</p>
+                        <p>International Conference on Machine Learning (ICML) 2016. (* equal contributions)</p>
+                        <a href="http://www.stat.ucla.edu/~jxie/download/GenerativeConvNet.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
+                        
+                        
+                    </div>
+                </div>
                 <hr class="my-3" />
                 <div class="row">
                     <div class="col-1 float-right" style="text-align:right;padding:13px">
-                        <p><b>9.</b></p>
+                        <p><b>2.</b></p>
                     </div>
-                    <div class="col-md-3 col-sm-4 align-self-center image-fluid" style="background-image: url('img/paper40.png')" alt="">
+                    <div class="col-md-3 col-sm-4 align-self-center image-fluid">
+                        <img class="paper_img" src="img/12.gif" alt="" />
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Synthesizing Dynamic Pattern by Spatial-Temporal Generative ConvNet</b></p>
+                        <p class="my-0">Jianwen Xie, Song-Chun Zhu, and Ying Nian Wu</p>
+                        <p>International Conference on Computer Vision and Pattern Recognition (CVPR) 2017</p>
+                        <a href="http://www.stat.ucla.edu/~jxie/STGConvNet/STGConvNet_file/doc/STGConvNet.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
+                        <a href="http://www.stat.ucla.edu/~jxie/STGConvNet/STGConvNet.html"><button type="button" class="btn-sm btn-primary">Project pages</button></a>
+                        
+                    </div>
+                </div>
+                <hr class="my-3" />
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>3.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center image-fluid">
+                        <img class="paper_img" src="img/13.png" alt="" />
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Learning Descriptor Networks for 3D Shape Synthesis and Analysis</b></p>
+                        <p class="my-0">Jianwen Xie *, Zilong Zheng *, Ruiqi Gao, Wenguan Wang, Song-Chun Zhu, Ying Nian Wu</p>
+                        <p>IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2018</p>
+                        <a href="http://www.stat.ucla.edu/~jxie/3DDescriptorNet/3DDescriptorNet_file/doc/3DDescriptorNet.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
+                        <a href="http://www.stat.ucla.edu/~jxie/3DDescriptorNet/3DDescriptorNet.html"><button type="button" class="btn-sm btn-primary">Project pages</button></a>
+                        
+                    </div>
+                </div>
+                <hr class="my-3" />
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>4.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center image-fluid">
+                        <img class="paper_img" src="img/14.png" alt="" />
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Learning Energy-Based Models as Generative ConvNets via Multi-grid Modeling and Sampling</b></p>
+                        <p class="my-0">Ruiqi Gao*, Yang Lu*, Junpei Zhou, Song-Chun Zhu, Ying Nian Wu (* equal contributions)</p>
+                        <p>IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2018</p>
+                        <a href="https://arxiv.org/pdf/1709.08868.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
+                        
+                        
+                    </div>
+                </div>
+                <hr class="my-3" />
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>5.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center image-fluid">
+                        <img class="paper_img" src="img/15.png" alt="" />
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Learning Energy-based Spatial-Temporal Generative ConvNet for Dynamic Patterns</b></p>
+                        <p class="my-0">Jianwen Xie, Song-Chun Zhu, and Ying Nian Wu</p>
+                        <p>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI) 2019</p>
+                        <a href="http://www.stat.ucla.edu/~jxie/STGConvNet/STGConvNet_file/doc/STGConvNet_PAMI.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
+                        <a href="http://www.stat.ucla.edu/~jxie/STGConvNet/STGConvNet.html"><button type="button" class="btn-sm btn-primary">Project pages</button></a>
+                        
+                    </div>
+                </div>
+                <hr class="my-3" />
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>6.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center image-fluid">
+                        <img class="paper_img" src="img/16.png" alt="" />
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Generative VoxelNet: Learning Energy-Based Models for 3D Shape Synthesis and Analysis</b></p>
+                        <p class="my-0">Jianwen Xie *, Zilong Zheng *, Ruiqi Gao, Wenguan Wang, Song-Chun Zhu, Ying Nian Wu</p>
+                        <p>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI) 2019</p>
+                        <a href="http://www.stat.ucla.edu/~jxie/3DEBM/3DEBM_file/doc/gVoxelNet.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
+                        <a href="http://www.stat.ucla.edu/~jxie/3DEBM/"><button type="button" class="btn-sm btn-primary">Project pages</button></a>
+                        
+                    </div>
+                </div>
+                <hr class="my-3" />
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>7.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center image-fluid">
+                        <img class="paper_img" src="img/40.png" alt="" />
                     </div>
                     <div class="col-md-8 col-sm-7 align-self-center">
                         <p><b>On Learning Non-convergent Non-persistent Short-run MCMC Toward Energy-based Model</b></p>
@@ -753,9 +589,150 @@
                 <hr class="my-3" />
                 <div class="row">
                     <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>8.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center image-fluid">
+                        <img class="paper_img" src="img/17.gif" alt="" />
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Energy-Based Continuous Inverse Optimal Control</b></p>
+                        <p class="my-0">Yifei Xu, Jianwen Xie, Tianyang Zhao, Chris Baker, Yibiao Zhao, Ying Nian Wu</p>
+                        <p>NeurIPS workshop on Machine Learning for Autonomous Driving, 2020</p>
+                        <a href="https://arxiv.org/pdf/1904.05453.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
+                        <a href="http://www.stat.ucla.edu/~yifeixu/meioc/"><button type="button" class="btn-sm btn-primary">Project pages</button></a>
+                        
+                    </div>
+                </div>
+                <hr class="my-3" />
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>9.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center image-fluid">
+                        <img class="paper_img" src="img/18.png" alt="" />
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Generative PointNet: Deep Energy-Based Learning on Unordered Point Sets for 3D Generation, Reconstruction and Classification</b></p>
+                        <p class="my-0">Jianwen Xie *, Yifei Xu *, Zilong Zheng, Song-Chun Zhu, Ying Nian Wu (* equal contributions)</p>
+                        <p>IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2021</p>
+                        <a href="http://www.stat.ucla.edu/~jxie/GPointNet/GPointNet_file/doc/GPointNet.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
+                        <a href="http://www.stat.ucla.edu/~jxie/GPointNet/"><button type="button" class="btn-sm btn-primary">Project pages</button></a>
+                        
+                    </div>
+                </div>
+                <hr class="my-3" />
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
                         <p><b>10.</b></p>
                     </div>
-                    <div class="col-md-3 col-sm-4 align-self-center image-fluid" style="background-image: url('img/paper41.jpg')" alt="">
+                    <div class="col-md-3 col-sm-4 align-self-center image-fluid">
+                        <img class="paper_img" src="img/19.png" alt="" />
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Patchwise Generative ConvNet: Training Energy-Based Models from a Single Natural Image for Internal Learning</b></p>
+                        <p class="my-0">Zilong Zheng, Jianwen Xie, Ping Li</p>
+                        <p>IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2021</p>
+                        <a href="http://www.stat.ucla.edu/~jxie/personalpage_file/publications/internal_EBM.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
+                        
+                        
+                    </div>
+                </div>
+            </section>
+            <hr class="my-5" />
+            
+            <section id="coop">
+                <h2 class="mb-5 font-weight-bold">Amortized Sampling for Energy-based Models</h2>
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>1.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center image-fluid">
+                        <img class="paper_img" src="img/21.png" alt="" />
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Cooperative learning of energy-based model and latent variable model via MCMC teaching</b></p>
+                        <p class="my-0">Jianwen Xie, Yang Lu, Ruiqi Gao, Song-Chun Zhu, and Ying Nian Wu</p>
+                        <p>AAAI Conference on Artificial Intelligence (AAAI) 2018)</p>
+                        <a href="http://www.stat.ucla.edu/~ywu/CoopNets/doc/CoopNets_AAAI.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
+                        <a href="http://www.stat.ucla.edu/~ywu/CoopNets/main.html"><button type="button" class="btn-sm btn-primary">Project pages</button></a>
+                        
+                    </div>
+                </div>
+                <hr class="my-3" />
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>2.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center image-fluid">
+                        <img class="paper_img" src="img/22.jpg" alt="" />
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Cooperative Training of Descriptor and Generator Networks</b></p>
+                        <p class="my-0">Jianwen Xie, Yang Lu, Ruiqi Gao, Song-Chun Zhu, and Ying Nian Wu</p>
+                        <p>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI) 2019</p>
+                        <a href="http://www.stat.ucla.edu/~jxie/CoopNets/CoopNets_files/doc/CoopNets_PAMI.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
+                        <a href="http://www.stat.ucla.edu/~jxie/CoopNets/CoopNets.html"><button type="button" class="btn-sm btn-primary">Project pages</button></a>
+                        
+                    </div>
+                </div>
+                <hr class="my-3" />
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>3.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center image-fluid">
+                        <img class="paper_img" src="img/23.png" alt="" />
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Cooperative Training of Fast Thinking Initializer and Slow Thinking Solver for Conditional Learning</b></p>
+                        <p class="my-0">Jianwen Xie *, Zilong Zheng *, Xiaolin Fang, Song-Chun Zhu, Ying Nian Wu (* equal contributions)</p>
+                        <p>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI) 2021</p>
+                        <a href="http://www.stat.ucla.edu/~jxie/CCoopNets/CCoopNets_file/doc/CCoopNets.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
+                        <a href="http://www.stat.ucla.edu/~jxie/CCoopNets/"><button type="button" class="btn-sm btn-primary">Project pages</button></a>
+                        
+                    </div>
+                </div>
+                <hr class="my-3" />
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>4.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center image-fluid">
+                        <img class="paper_img" src="img/24.png" alt="" />
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Learning Cycle-Consistent Cooperative Networks via Alternating MCMC Teaching for Unsupervised Cross-Domain Translation</b></p>
+                        <p class="my-0">Jianwen Xie *, Zilong Zheng *, Xiaolin Fang, Song-Chun Zhu, Ying Nian Wu (* equal contributions)</p>
+                        <p>The Thirty-Fifth AAAI Conference on Artificial Intelligence (AAAI) 2021</p>
+                        <a href="http://www.stat.ucla.edu/~jxie/CycleCoopNets/cyclecoopnets_file/doc/cycleCoopNets.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
+                        <a href="http://www.stat.ucla.edu/~jxie/CycleCoopNets/"><button type="button" class="btn-sm btn-primary">Project pages</button></a>
+                        
+                    </div>
+                </div>
+                <hr class="my-3" />
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>5.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center image-fluid">
+                        <img class="paper_img" src="img/25.png" alt="" />
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Learning Energy-Based Model with Variational Auto-Encoder as Amortized Sampler</b></p>
+                        <p class="my-0">Jianwen Xie, Zilong Zheng, Ping Li</p>
+                        <p>The Thirty-Fifth AAAI Conference on Artificial Intelligence (AAAI) 2021</p>
+                        <a href="https://arxiv.org/pdf/2012.14936.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
+                        
+                        
+                    </div>
+                </div>
+                <hr class="my-3" />
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>6.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center image-fluid">
+                        <img class="paper_img" src="img/41.jpg" alt="" />
                     </div>
                     <div class="col-md-8 col-sm-7 align-self-center">
                         <p><b>Divergence triangle for joint training of generator model, energy-based model, and inference model</b></p>
@@ -769,25 +746,10 @@
                 <hr class="my-3" />
                 <div class="row">
                     <div class="col-1 float-right" style="text-align:right;padding:13px">
-                        <p><b>11.</b></p>
+                        <p><b>7.</b></p>
                     </div>
-                    <div class="col-md-3 col-sm-4 align-self-center image-fluid" style="background-image: url('img/paper42.png')" alt="">
-                    </div>
-                    <div class="col-md-8 col-sm-7 align-self-center">
-                        <p><b>On the anatomy of MCMC-based maximum likelihood learning of energy-based models</b></p>
-                        <p class="my-0"> Erik Nijkamp*, Mitch Hill*, Tian Han, Song-Chun Zhu, and Ying Nian Wu</p>
-                        <p>AAAI Conference on Artificial Intelligence (AAAI) 2020. (*equal contribution)</p>
-                        <a href="https://arxiv.org/pdf/1903.12370.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
-                        <a href="https://enijkamp.github.io/project_anatomy/"><button type="button" class="btn-sm btn-primary">Project pages</button></a>
-                        
-                    </div>
-                </div>
-                <hr class="my-3" />
-                <div class="row">
-                    <div class="col-1 float-right" style="text-align:right;padding:13px">
-                        <p><b>12.</b></p>
-                    </div>
-                    <div class="col-md-3 col-sm-4 align-self-center image-fluid" style="background-image: url('img/paper43.png')" alt="">
+                    <div class="col-md-3 col-sm-4 align-self-center image-fluid">
+                        <img class="paper_img" src="img/43.png" alt="" />
                     </div>
                     <div class="col-md-8 col-sm-7 align-self-center">
                         <p><b>Joint training of variational auto-encoder and latent energy-based model</b></p>
@@ -801,12 +763,13 @@
                 <hr class="my-3" />
                 <div class="row">
                     <div class="col-1 float-right" style="text-align:right;padding:13px">
-                        <p><b>13.</b></p>
+                        <p><b>8.</b></p>
                     </div>
-                    <div class="col-md-3 col-sm-4 align-self-center image-fluid" style="background-image: url('img/paper44.jpg')" alt="">
+                    <div class="col-md-3 col-sm-4 align-self-center image-fluid">
+                        <img class="paper_img" src="img/44.png" alt="" />
                     </div>
                     <div class="col-md-8 col-sm-7 align-self-center">
-                        <p><b>Flow contrastive estimation of energy-based model. </b></p>
+                        <p><b>Flow contrastive estimation of energy-based model</b></p>
                         <p class="my-0"> Ruiqi Gao, Erik Nijkamp, Diederik Kingma, Zhen Xu, Andrew Dai, and Ying Nian Wu. </p>
                         <p>Proceedings of IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2020.</p>
                         <a href="https://arxiv.org/pdf/1912.00589.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
@@ -814,28 +777,18 @@
                         
                     </div>
                 </div>
-                <hr class="my-3" />
+            </section>
+            <hr class="my-5" />
+            <section id="latent">
+
+                <!-- Heading -->
+                <h2 class="mb-5 font-weight-bold">Latent Space Energy-based Models</h2>
                 <div class="row">
                     <div class="col-1 float-right" style="text-align:right;padding:13px">
-                        <p><b>14.</b></p>
+                        <p><b>1.</b></p>
                     </div>
-                    <div class="col-md-3 col-sm-4 align-self-center image-fluid" style="background-image: url('img/paper45.gif')" alt="">
-                    </div>
-                    <div class="col-md-8 col-sm-7 align-self-center">
-                        <p><b>Learning energy-based model with flow-based backbone by neural transport MCMC</b></p>
-                        <p class="my-0"> Erik Nijkamp*, Ruiqi Gao*, Pavel Sountsov, Srinivas Vasudevan, Bo Pang, Song-Chun Zhu, and Ying Nian Wu</p>
-                        <p>ArXiv 2020. (*equal contribution)</p>
-                        <a href="https://arxiv.org/pdf/2006.06897.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
-                        
-                        
-                    </div>
-                </div>
-                <hr class="my-3" />
-                <div class="row">
-                    <div class="col-1 float-right" style="text-align:right;padding:13px">
-                        <p><b>15.</b></p>
-                    </div>
-                    <div class="col-md-3 col-sm-4 align-self-center image-fluid" style="background-image: url('img/paper46.png')" alt="">
+                    <div class="col-md-3 col-sm-4 align-self-center image-fluid">
+                        <img class="paper_img" src="img/51.png" alt="" />
                     </div>
                     <div class="col-md-8 col-sm-7 align-self-center">
                         <p><b>Learning latent space energy-based prior model</b></p>
@@ -843,6 +796,57 @@
                         <p>Neural Information Processing Systems (NeurIPS) 2020. (*equal contribution)</p>
                         <a href="https://arxiv.org/pdf/2006.08205.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
                         <a href="https://bpucla.github.io/latent-space-ebm-prior-project/"><button type="button" class="btn-sm btn-primary">Project pages</button></a>
+                        
+                    </div>
+                </div>
+                <hr class="my-3" />
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>2.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center image-fluid">
+                        <img class="paper_img" src="img/52.png" alt="" />
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Learning latent space energy-based prior model for molecule generation</b></p>
+                        <p class="my-0">Bo Pang, Tian Han, and Ying Nian Wu</p>
+                        <p>Machine Learning for Molecules Workshop at NeurIPS 2020</p>
+                        <a href="https://arxiv.org/pdf/2010.09351.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
+                        
+                        
+                    </div>
+                </div>
+                <hr class="my-3" />
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>3.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center image-fluid">
+                        <img class="paper_img" src="img/53.png" alt="" />
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Semi-supervised learning by latent space energy-based model of symbol-vector coupling</b></p>
+                        <p class="my-0">Bo Pang, Erik Nijkamp, Jiali Cui, Tian Han, and Ying Nian Wu</p>
+                        <p>ICBINB Workshop at NeurIPS 2020</p>
+                        <a href="https://arxiv.org/pdf/2010.09359.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
+                        
+                        
+                    </div>
+                </div>
+                <hr class="my-3" />
+                <div class="row">
+                    <div class="col-1 float-right" style="text-align:right;padding:13px">
+                        <p><b>4.</b></p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 align-self-center image-fluid">
+                        <img class="paper_img" src="img/54.png" alt="" />
+                    </div>
+                    <div class="col-md-8 col-sm-7 align-self-center">
+                        <p><b>Trajectory prediction with latent belief energy-based model</b></p>
+                        <p class="my-0">Bo Pang, Tianyang Zhao, Xu Xie, and Ying Nian Wu</p>
+                        <p>Proceedings of IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</p>
+                        <a href="https://arxiv.org/pdf/2104.03086.pdf"><button type="button" class="btn-sm btn-primary">Paper</button></a>
+                        <a href="https://github.com/bpucla/lbebm"><button type="button" class="btn-sm btn-primary">Project pages</button></a>
                         
                     </div>
                 </div>
