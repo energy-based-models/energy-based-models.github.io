@@ -221,7 +221,7 @@
                 <!-- Collapsible content -->
                 <div class="collapse navbar-collapse" id="basicExampleNav">
                     <!-- Links -->
-                    <ul class="navbar-nav mr-auto smooth-scroll">
+                    <ul class="navbar-nav smooth-scroll">
                         <li class="nav-item">
                             <a
                             class="nav-link waves-effect waves-light"
@@ -236,16 +236,20 @@
                             >
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link waves-effect waves-light" href="#video" data-offset=80
+                            >Videos</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link waves-effect waves-light" href="#Topics" data-offset=80
                             >Topics</a
                             >
                         </li>
                     </ul>
-                    <!-- <ul class="navbar-nav", style="padding-right:40px">
+                    <ul class="navbar-nav mr-auto", style="padding-right:40px">
                         <li class="nav-item">
-                            <a class="nav-link waves-effect waves-light " href="http://v.yfxu.me/ebm/paper.html">Papers</a>
+                            <a class="nav-link waves-effect waves-light " href="./paper.html">Papers</a>
                         </li>
-                    </ul> -->
+                    </ul>
             <!-- Links -->
 
                     <!-- Right elements -->
@@ -301,8 +305,9 @@
                             <!-- <h5 class="white-text my-3">
                                 11:00 AM - 02:30 PM (PDT, UTC-7) June 19th, 2021
                             </h5> -->
-                            <h5 class="white-text my-3">Morning, October 16th, 2021</h5>
-                            <button type="button" class="btn btn-outline-light btn-rounded">Zoom Link</button>
+                            <h5 class="white-text my-3">09:00 AM - 12:00 PM (PDT, UTC-7), October 16th, 2021</h5>
+                            <h5 class="white-text my-3">Please access the zoom through ICCV landing page for Q&A.</h5>
+                            <!-- <button type="button" class="btn btn-outline-light btn-rounded">Zoom Link</button> -->
                             
                             <!-- <div class="row">
                                 <div class="col-md-3">
@@ -383,7 +388,24 @@
                 </div>
                 
             </section>
-            <!--Section: Examples-->
+
+            <hr class="my-2" />
+
+            <section id="video">
+                
+                <h2 class="mb-5 font-weight-bold" , style="margin-top:40px;margin-bottom:20px">Tutorial Video</h2>
+                
+                <div class=" mb-3">
+                    <div class="row justify-content-center">
+                        <div class="col-sm-12">
+                            <div class="card-body" style="height:450px; padding:20px">
+                                <iframe width="70%" height="100%" style="display:block;margin: 0 auto;"src="https://www.youtube.com/embed/kZiW8ICg9wM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <hr class="my-2" />
 
 
@@ -400,20 +422,21 @@
                                 <!-- <h6>11:00 AM - 12:00 PM --- Speaker: Jianwen Xie</h6> -->
                             </div>
                             <div class="card-body">
-                                <!-- <h6 class="font-weight-bold">1. Energy-Based Model Fundatmentals</h6> -->
+                                <h6 class="font-weight-bold">1. Background</h6>
                                 <ul>
-                                    <li>
-                                        Three families of probabilistic models: Descriptor, Generator, and Discriminator                               </li>
-                                    <li>
-                                        Filters, Random Fields and Maximum Entropy (FRAME) models</li>
-                                    <li>Sparse and Deep Generaization of FRAME models</li>
-                                    <li>Generative ConvNets: The first deep EBM parameterized by modern neural network  </li>
-                                    <li>Equivalence between EBM and discriminative models </li>
-                                    <li>Maximum likelihood estimation and &quot;analysis by synthesis&quot; </li>
-                                    <li>Gradient-based MCMC and Langevin Dynamics</li>
-                                    <li>Self-adversarial interpretation of energy-based learning</li>
-                                    <li>Contrastive divergence </li>
-                                    <li>Short-Run MCMC for EBM</li>
+                                    <li>Probabilistic models of images</li>
+                                    <li>Gibbs distribution in statistical physics</li>
+                                    <li>Filters, Random Fields and Maximum Entropy (FRAME) models</li>
+                                    <li>Generative ConvNet: EBM parameterized by modern neural network</li>
+                                </ul>
+                                <h6 class="font-weight-bold">2. Elements of Energy-Based Generative Learning</h6>
+                                <ul>
+                                    <li>Understanding Kullback-Leibler divergences</li>
+                                    <li>Maximum likelihood learning, analysis by synthesis</li>
+                                    <li>Gradient-based MCMC and Langevin sampling</li>
+                                    <li>Adversarial self-critic interpretations</li>
+                                    <li>Short-run MCMC for synthesis for EBMs</li>
+                                    <li>Equivalence between EBMs and discriminative models</li>
                                 </ul>
                             </div>
                             <!-- <hr class="my-2" />
@@ -439,26 +462,22 @@
                     <div class="row justify-content-center">
                         <div class="col-sm-12">
                             <div class="card-header">
-                                <h5 class="font-weight-bold my-0">Part II : Methodologies</h5>
+                                <h5 class="font-weight-bold my-0">Part II : Advanced</h5>
                                 <!-- <h6>12:30 PM - 14:00 PM --- Speaker: Ying Nian Wu</h6> -->
                             </div>
                             <div class="card-body">
-                                <h6 class="font-weight-bold">1. Energy-Based Generative Frameworks</h6>
+                                <h6 class="font-weight-bold">1. Strategy for Efficient Learning and Sampling</h6>
                                 <ul>
-                                    <li>
-                                    Energy-based generative neural network</li>
-                                    <li>Generative Cooperative Networks and Cooperative learning </li>
-                                    <li>
-                                        Divergence triangle</li>
-                                    <li>
-                                        EBM in latent space of generator model                                    </li>
-                                    <li>
-                                        Joint training of EBM with flow-based model                                    </li>
-                                </ul>
-                                <h6 class="font-weight-bold">2: Strategy for Efficient Learning and Sampling</h6>
-                                <ul>
+                                    <li>Multi-stage expanding and sampling for EBMs</li>
                                     <li>Multi-grid learning and sampling for EBMs </li>
-                                    <li>Multi-stage corse-to-fine expanding and sampling for EBMs </li>
+                                    <li>Learning EBM by recovery likelihood</li>
+                                </ul>
+                                <h6 class="font-weight-bold">2. Energy-Based Generative Frameworks</h6>
+                                <ul>
+                                    <li>Generative cooperative network</li>
+                                    <li>Divergence triangle</li>
+                                    <li>Latent Space Energy-Based Prior Model</li>
+                                    <li>Flow contrastive estimation of energy-based model</li>
                                 </ul>
                             </div>
                         </div>
@@ -473,30 +492,32 @@
                                 <!-- <h6>12:30 PM - 14:00 PM --- Speaker: Ying Nian Wu</h6> -->
                             </div>
                             <div class="card-body">
-                                <h6 class="font-weight-bold">1: Energy-Based Generative Neural Networks </h6>
+                                <h6 class="font-weight-bold">1. Energy-Based Generative Neural Networks </h6>
                                 <ul>
-                                    <li>
-                                        Generative PointNet: EBMs for unordered point clouds                                    </li>
-                                    <li>
-                                        Generative VoxelNet: EBMs for 3D volumetric shapes                                    </li>
-                                    <li>
-                                        Generative Spatial-Temporal ConvNet: EBMs for videos                                    </li>
-                                    <li>EBMs for inverse optimal control and trajectory prediction </li>
-                                    <li>Patchwise  Generative ConvNet: EBMs for internal learning                                    </li>
+                                    <li>Generative ConvNet: EBMs for images</li>
+                                    <li>Spatial-Temporal Generative ConvNet: EBMs for videos</li>
+                                    <li>Generative VoxelNet: EBMs for 3D volumetric shapes</li>
+                                    <li>Generative PointNet: EBMs for unordered point clouds</li>
+                                    <li>EBMs for inverse optimal control and trajectory prediction</li>
+                                    <li>Patchwise Generative ConvNet: EBMs for internal learning</li>
                                 </ul>
-                                <h6 class="font-weight-bold">2: Energy-Based Generative Cooperative Networks</h6>
+                                <h6 class="font-weight-bold">2. Energy-Based Generative Cooperative Networks</h6>
                                 <ul>
-                                    <li>Visual data synthesis </li>
-                                    <li>
-                                    Cooperative network for Conditional learning (supervised image-to-image generation)</li>
+                                    <li>Unconditioned image, video, 3D shape synthesis</li>
+                                    <li>Supervised conditional learning</li>
                                     <li>Unsupervised image-to-image translation</li>
-                                    <li>Generative cooperative saliency prediction </li>
+                                    <li>Unsupervised sequence-to-sequence translation</li>
+                                    <li>Generative saliency prediction</li>
                                 </ul>
-                                <h6 class="font-weight-bold">3: Latent Space Energy-Based Model</h6>
+                                <h6 class="font-weight-bold">3. Latent Space Energy-Based Model</h6>
                                 <ul>
-                                    <li>Trajectory prediction with latent belief energy-based model</li>
-                                    <li>Learning latent space energy-based prior model for molecule generation</li>
-                                    <li>Semi-supervised learning by latent space energy-based model of symbol-vector coupling</li>
+                                    <li>Text Generation</li>
+                                    <li>Molecule Generation</li>
+                                    <li>Anomaly Detection</li>
+                                    <li>Saliency prediction using transformer with energy-based prior </li>
+                                    <li>Trajectory Prediction</li>
+                                    <li>Semi-Supervised Learning</li>
+                                    <li>Controlled Text Generation</li>
                                 </ul>
                             </div>
                             </div>
