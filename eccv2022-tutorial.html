@@ -1,0 +1,581 @@
+<html>
+
+<head>
+    
+    <title>ECCV 2022 Tutorial on Deep Energy-Based Learning in Computer Vision</title>
+    <link rel="icon" href="https://energy-based-models.github.io/img/ijcai.png" type="image/x-icon" />
+    <meta property="og:title" content="ECCV 2022 Tutorial on Deep Energy-Based Learning in Computer Vision" />
+    <meta property="og:image" content="https://energy-based-models.github.io/img/ijcai.png" />
+    <meta property="og:description" content="Deep Energy-Based Learning in Computer Vision" />
+
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:image" content="https://energy-based-models.github.io/img/ijcai.png" />
+    <meta property="twitter:title" content="ECCV 2022 Tutorial on Deep Energy-Based Learning in Computer Vision" />
+    <meta property="twitter:description" content="ECCV 2022 Tutorial on Deep Energy-Based Learning in Computer Vision" />
+
+    <style>
+        .gm-control-active>img {
+            box-sizing: content-box;
+            display: none;
+            left: 50%;
+            pointer-events: none;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .gm-control-active>img:nth-child(1) {
+            display: block;
+        }
+        
+        .gm-control-active:hover>img:nth-child(1),
+        .gm-control-active:active>img:nth-child(1) {
+            display: none;
+        }
+        
+        .gm-control-active:hover>img:nth-child(2),
+        .gm-control-active:active>img:nth-child(3) {
+            display: block;
+        }
+    </style>
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans:400,500,700|Google+Sans+Text:400" />
+    <style>
+        .gm-ui-hover-effect {
+            opacity: 0.6;
+        }
+        
+        .gm-ui-hover-effect:hover {
+            opacity: 1;
+        }
+
+        .gm-style .gm-style-cc a,
+        .gm-style .gm-style-cc button,
+        .gm-style .gm-style-cc span,
+        .gm-style .gm-style-mtc div {
+            font-size: 10px;
+            box-sizing: border-box;
+        }
+        @media print {
+            .gm-style .gmnoprint,
+            .gmnoprint {
+                display: none;
+            }
+        }
+        
+        @media screen {
+            .gm-style .gmnoscreen,
+            .gmnoscreen {
+                display: none;
+            }
+        }
+        .dismissButton {
+            background-color: #fff;
+            border: 1px solid #dadce0;
+            color: #1a73e8;
+            border-radius: 4px;
+            font-family: Roboto, sans-serif;
+            font-size: 14px;
+            height: 36px;
+            cursor: pointer;
+            padding: 0 24px;
+        }
+        
+        .dismissButton:hover {
+            background-color: rgba(66, 133, 244, 0.04);
+            border: 1px solid #d2e3fc;
+        }
+        
+        .dismissButton:focus {
+            background-color: rgba(66, 133, 244, 0.12);
+            border: 1px solid #d2e3fc;
+            outline: 0;
+        }
+        
+        .dismissButton:hover:focus {
+            background-color: rgba(66, 133, 244, 0.16);
+            border: 1px solid #d2e2fd;
+        }
+        
+        .dismissButton:active {
+            background-color: rgba(66, 133, 244, 0.16);
+            border: 1px solid #d2e2fd;
+            box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+        }
+        
+        .dismissButton:disabled {
+            background-color: #fff;
+            border: 1px solid #f1f3f4;
+            color: #3c4043;
+        }
+
+        .gm-style-pbc {
+            transition: opacity ease-in-out;
+            background-color: rgba(0, 0, 0, 0.45);
+            text-align: center;
+        }
+        
+        .gm-style-pbt {
+            font-size: 22px;
+            color: white;
+            font-family: Roboto, Arial, sans-serif;
+            position: relative;
+            margin: 0;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+
+        .gm-style img {
+            max-width: none;
+        }
+        
+        .gm-style {
+            font: 400 11px Roboto, Arial, sans-serif;
+            text-decoration: none;
+        }
+    </style>
+    <base target="_parent" />
+    <link rel="stylesheet" href="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.2/css/mdb.min.css" />
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        #intro {
+            background-size : cover;
+            background-position: center center;
+            background-image: url('img/b5.jpg');
+            /* background-attachment: fixed; */
+        }
+        .card-body {
+            padding-bottom: 0px;
+        }
+        .pad_0 {
+            padding: 0;
+        }
+        .pad_5 {
+            padding: 5% 5% 5% 5%;
+        }
+        .pad_15 {
+            padding: 5% 15% ;
+        }
+        .pad_60 {
+            padding: 60px 60px 60px 60px;
+        }
+        .top-nav-collapse {
+            background-color: #24355c;
+        }
+        
+        @media (max-width: 768px) {
+            .navbar:not(.top-nav-collapse) {
+                background-color: #24355c;
+            }
+        }
+        
+        @media (min-width: 800px) and (max-width: 850px) {
+            .navbar:not(.top-nav-collapse) {
+                background-color: #24355c;
+            }
+        }
+    </style>
+    <style type="text/css">
+        /* Chart.js */
+        
+        @-webkit-keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .chartjs-render-monitor {
+            -webkit-animation: chartjs-render-animation 0.001s;
+            animation: chartjs-render-animation 0.001s;
+        }
+    </style>
+</head>
+
+<body>
+    <!--Main Navigation-->
+    <header>
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+            <div class="container">
+                <!-- Navbar brand -->
+                <!-- <div class="navbar-brand" href="#">Energy-based Models</div> -->
+
+                <!-- Collapse button -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Collapsible content -->
+                <div class="collapse navbar-collapse" id="basicExampleNav">
+                    <!-- Links -->
+                    <ul class="navbar-nav smooth-scroll">
+                        <li class="nav-item">
+                            <a
+                            class="nav-link waves-effect waves-light"
+                            href="#Overview" 
+                            data-offset=80
+                            >Overview</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link waves-effect waves-light" href="#Speakers" data-offset=80
+                            >Speakers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link waves-effect waves-light" href="#slides" data-offset=80
+                            >Slides</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link waves-effect waves-light" href="#video" data-offset=80
+                            >Videos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link waves-effect waves-light" href="#Topics" data-offset=80
+                            >Topics</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav mr-auto", style="padding-right:40px">
+                        <li class="nav-item">
+                            <a class="nav-link waves-effect waves-light " href="./paper.html">Papers</a>
+                        </li>
+                    </ul>
+            <!-- Links -->
+
+                    <!-- Right elements -->
+                    <div class="d-flex align-items-center">
+                        <a href="https://ijcai-22.org/">
+                        <img
+                        src="img/ijcai.png"
+                        height="35"
+                        alt=""
+                        loading="lazy"
+                        /></a>
+                    </div>
+                    <!-- Right elements -->
+
+                </div>
+            <!-- Collapsible content -->
+            </div>
+        </nav>
+        <!--/.Navbar-->
+        
+        <!--Mask-->
+        <div id="intro" class="view">
+            <div class="rgba-black-light", style="padding-top: 100px; padding-bottom:100px">
+                <div class="container-lg align-items-center justify-content-center">
+                    <div class="row justify-content-center text-center">
+                        <div class="col-md-10">
+                            <!-- Heading -->
+                            <!-- <div class="row">
+                                <div class="col-md-3">
+                                    <img src="http://www.stat.ucla.edu/~ywu/church.png" alt="..." class="card-img-top rounded" />
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="img/unit.jpg" alt="..." class="card-img-top rounded" />
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="img/transition.png" alt="..." class="card-img-top" />
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="http://www.stat.ucla.edu/~ywu/lsun.png" alt="..." class="card-img-top" />
+                                </div>
+                            </div> -->
+                            <h2 class="display-4 font-weight-bold white-text pt-5 mb-2">
+                                Deep Energy-Based Learning in Computer Vision
+                            </h2>
+
+                            <!-- Divider -->
+                            <hr class="hr-light" />
+
+                            <!-- Description -->
+                            <h4 class="white-text my-3">
+                                ECCV 2022 Tutorial
+                            </h4>
+                            <h5 class="white-text my-3">October 23th-24th, 2022</h5>                            
+                            <!--<h5 class="white-text my-3">The tutorial has been pre-recorded and is available below. </h5> -->
+                            <!-- <h5 class="white-text my-3" style="background-color: rgb(77, 77, 255);">Handouts including slides will be available shortly.</h5> -->
+                            <!-- If you have any questions, please contact Jianwen Xie: <a href="mailto:jianwen@ucla.edu">jianwen@ucla.edu</a>. -->
+                            <!-- <button type="button" class="btn btn-outline-light btn-rounded">Zoom Link</button> -->
+                            
+                            <!-- <div class="row">
+                                <div class="col-md-3">
+                                    <img src="http://www.stat.ucla.edu/~ywu/LSUN.png" alt="..." class="card-img-top" />
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="http://www.stat.ucla.edu/~ywu/chains.gif" alt="..." class="card-img-top" />
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="img/3D_syn.png" alt="..." class="card-img-top" />
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="img/xing.png" alt="..." class="card-img-top" />
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/.Mask-->
+    </header>
+    <!--Main Navigation-->
+
+    <!--Main layout-->
+    <main class="mt-5">
+        <div class="container">
+            <section id="Overview">
+                <h2 class="mb-5 font-weight-bold">Overview</h2>
+                <div class="row d-flex justify-content-center mb-4">
+                    <!--Grid column-->
+                    <div class="col-md-8">
+                        <!-- Description -->
+                        <p class="text-justify">
+                          There has been growing interest and advance in deep energy-based learning. The deep energy-based model specifies an explicit probability density up to a normalization by using a modern bottom-up neural network to parameterize the energy function. The model can be trained by Langevin dynamics-based maximum likelihood estimation.  It unifies the bottom-up representation and top-down generation into a single framework, which makes it different from the other generative models, such as generative adversarial net (GAN) and variational auto-encoder (VAE). This tutorial provides a quick introduction of current deep energy-based modeling and learning methodologies. It starts from the background of energy-based models from the perspective of computer vision, and then presents three categories of deep energy-based frameworks, including deep energy-based models in data space, energy-based cooperative learning frameworks, and energy-based models in latent space. This tutorial aims to enable researchers to learn about the current advance of deep energy-based learning and apply the knowledges to other domains.   </p>
+                    </div>
+                    <!--Grid column-->
+                </div>
+                <!--Grid row-->
+
+            </section>
+            <!--Section: Best Features-->
+
+            <hr class="my-2" />
+
+            <!--Section: Examples-->
+            <section id="Speakers">
+                <h2 class="mb-5 font-weight-bold" , style="margin-top:40px">Speakers</h2>
+
+                <!--Grid row-->
+                <div class="container">
+                    <div class="row text-center", style="padding-left:5%;padding-right:5%">
+                        <!--Grid column-->
+                        <div class="col-md-4 col-sm-12"> 
+                            <div class="view overlay pad_15">
+                                <a href="http://www.stat.ucla.edu/~jxie/"><img src="img/jianwen.jpg" class="card-img-top rounded-circle" alt="" /></a>
+                                <div class="mask rgba-white-slight"></div>
+                            </div>
+    
+                            <h4 class="font-weight-bold", style="margin-top:10px;margin-bottom:10px"><a href="http://www.stat.ucla.edu/~jxie/">Jianwen Xie</a></h4>
+                            <p class="text-justify text-center">
+                                Baidu Research, USA</p>
+                        </div>
+                        <!-- <div class="col-md-4 col-sm-6 offset-md-2">
+                            <div class="view overlay pad_15">
+                                <a href="http://www.stat.ucla.edu/~ywu/"><img src="img/ynwu.jpg" class="card-img-top rounded-circle" alt="" /></a>
+                                <div class="mask rgba-white-slight"></div>
+                            </div>
+    
+                            <h4 class="font-weight-bold", style="margin-top:10px;margin-bottom:10px">  
+                            <a href="http://www.stat.ucla.edu/~ywu/">Ying Nian Wu</a></h4>
+                                <p class="text-justify text-center">
+                                    University of California, Los Angeles
+                                </p>
+                        </div> -->
+                    </div>
+                </div>
+                
+            </section>
+            <hr class="my-2" />
+            <section id="slides">
+                <h2 class="mb-5 font-weight-bold" style="margin-top:40px">Slides</h2>
+                
+                <a href="./document/EBMtutorial_ijcai_2022.pdf"><img src="img/pdf.png" alt="" style="width:32px;"></a>
+                <p><a href="./document/EBMtutorial_ijcai_2022.pdf">Click here to download</a></p>
+
+
+            </section>
+            
+            <hr class="my-2" />
+
+            <!--<section id="video">
+                
+                <h2 class="mb-5 font-weight-bold" , style="margin-top:40px;margin-bottom:20px">Tutorial Video</h2>
+                
+                <div class=" mb-3">
+                    <div class="row justify-content-center">
+                        <div class="col-sm-12">                           
+                            <div class="card-body" style="height:450px; padding:20px">
+                                <iframe width="70%" height="100%" style="display:block;margin: 0 auto;"src="https://www.youtube.com/embed/X7CvBRKofHU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                
+                 <p style="margin-top:20px">If you cannot access YouTube, please access our video on 
+                    <a href="https://www.bilibili.com/video/BV1XK4y1M7Re">
+                        <img src="img/bilibili.png" alt="" style="width:32px">
+                        Bilibili</a>.</p> 
+                
+            </section> -->
+            <hr class="my-2" />
+
+            
+            <section id="Topics">
+
+                <!-- Heading -->
+                <h2 class="mb-5 font-weight-bold" , style="margin-top:40px">Topics</h2>
+
+                <div class=" mb-3">
+                    <div class="row justify-content-center">
+                        <div class="col-sm-12">
+                            <div class="card-header">
+                                <h5 class="font-weight-bold my-0">Part I : Background</h5>                              
+                            </div>
+                            <div class="card-body">                                
+                                <ul>
+                                    <li>Knowledge Representation: Sets, Concepts and Models</li>
+                                    <li>Pattern Theory</li>
+                                    <li>FRAME (Filters, Random field, And Maximum Entropy)</li>
+                                    <li>Inhomogeneous FRAME Model</li>
+                                    <li>Sparse FRAME Model</li>
+                                    <li>Deep FRAME Model</li>
+                                    <li>Deep Energy-Based Models – Generative ConvNet</li>
+                                </ul>                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="my-2">
+                <div class="">
+                    <div class="row justify-content-center">
+                        <div class="col-sm-12">
+                            <div class="card-header">
+                                <h5 class="font-weight-bold my-0">Part II : Deep Energy-Based Models in Data Space</h5>                                
+                            </div>
+                            <div class="card-body">                                
+                                <ul>
+                                    <li>Maximum Likelihood Estimation of Generative ConvNet</li>
+                                    <li>Mode Seeking and Mode Shifting</li>
+                                    <li>Adversarial Interpretations</li>
+                                    <li>Short-run MCMC for EBM</li>
+                                    <li>Multi-Grid Modeling and Sampling</li>
+                                    <li>Multi-Stage Coarse-to-Fine Expanding and Sampling</li>                                    
+                                    <li>Spatial-Temporal Generative ConvNet: EBMs for Videos</li>
+                                    <li>Generative VoxelNet: EBMs for 3D Voxels</li>
+                                    <li>Generative PointNet: EBMs for Unordered Point Clouds</li>
+                                    <li>Energy-Based Continuous Inverse Optimal Control</li>
+                                </ul>                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="my-2">
+                <div class="">
+                    <div class="row justify-content-center">
+                        <div class="col-sm-12">
+                            <div class="card-header">
+                                <h5 class="font-weight-bold my-0">Part III : Deep Energy-Based Cooperative Learning</h5>                               
+                            </div>
+                            <div class="card-body">                                
+                                <ul>
+                                    <li>Generator Model as a Deep Latent Variable Model</li>
+                                    <li>Maximum Likelihood Learning of Generator Model</li>
+                                    <li>Two Generative Models: EBM vs. LVM </li>
+                                    <li>Cooperative Learning via MCMC Teaching</li>
+                                    <li>Cooperative Conditional Learning</li>
+                                    <li>Cycle-Consistent Cooperative Network</li>                                    
+                                    <li>Cooperative Learning via Variational MCMC Teaching</li>
+                                    <li>Cooperative Learning of EBM and Normalizing Flow</li>                                    
+                                </ul>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="my-2">
+                <div class="">
+                    <div class="row justify-content-center">
+                        <div class="col-sm-12">
+                            <div class="card-header">
+                                <h5 class="font-weight-bold my-0">Part IV : Deep Energy-Based Models in Latent Space</h5>                                
+                            </div>
+                            <div class="card-body">                                
+                                <ul>
+                                    <li>Latent Space Energy-Based Prior Model</li>
+                                    <li>Learning by Maximum Likelihood</li>
+                                    <li>Prior and Posterior Sampling</li>
+                                    <li>Learning and Sampling Algorithm of Latent Space EBM</li>
+                                    <li>Latent Space Energy-Based Model for Sequential Data</li>                                    
+                                    <li>Latent Space EBM for Trajectory Prediction</li>                                    
+                                    <li>Conditional Learning with Latent Space EBM </li>                                   
+                                </ul> 
+                            </div>
+                        </div>
+                    </div>
+                </div>                    
+            </section>
+
+            <hr class="my-5" />
+
+            </div>
+    </main>
+    <!--Main layout-->
+
+    <!-- Footer -->
+    <footer class="page-footer font-small unique-color-dark">
+
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">
+                Web designer: <a href="https://yfxu.me">Yifei Xu</a>; 2018 Copyright:
+                <a href="https://mdbootstrap.com/bootstrap-tutorial/">
+          MDBootstrap.com</a
+        >
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+    <script
+      type="text/javascript"
+      src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.2/js/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.2/js/popper.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.2/js/bootstrap.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.2/js/mdb.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/js/bundles/4.19.2/compiled-addons.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/js/plugins/mdb-plugins-gathered.min.js"
+    ></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-43X8292BRF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-43X8292BRF');
+    </script>
+    <div class="hiddendiv common"></div>
+  </body>
+</html>
